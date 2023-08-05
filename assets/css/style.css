@@ -1,0 +1,153 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #10141e !important;
+}
+
+body::-webkit-scrollbar {
+  width: 2px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #4595d0 !important;
+}
+
+body {
+  background-color: #10141e;
+}
+
+body .up {
+  position: fixed;
+  padding: 10px;
+  z-index: 999;
+  top: 90vh;
+  left: 80vw;
+  background-color: #4595d0 !important;
+  border-radius: 20%;
+  color: #fff !important;
+  padding: 1rem 1.3rem;
+  display: none;
+}
+
+.up-js {
+  display: block !important;
+  transition: 0.5s;
+}
+
+hr {
+  width: 35%;
+  margin: auto;
+  border: 2px solid #116aaa;
+}
+
+.active {
+  color: #116aaa !important;
+}
+/* nav */
+.nav-js {
+  background-color: #171b25 !important;
+  transition: 0.5s;
+  box-shadow: 0 10px 20px #1c202b;
+  color: #116aaa;
+}
+nav {
+  color: white !important;
+}
+
+/* end nav */
+/* hero */
+#hero {
+  min-height: 100vh;
+}
+
+#hero p,
+h3 {
+  color: #fff;
+}
+#hero h6 {
+  color: #4595d0;
+  font-weight: 700;
+}
+
+#herp h1,
+h6,
+p {
+  margin: 0;
+}
+
+#hero button {
+  padding: 0.5rem 1rem;
+  background-color: #4595d0;
+  font-weight: 600;
+  border: none;
+  color: #fff;
+}
+
+/* end hero */
+
+/* about */
+#about h1 {
+  color: #fff;
+}
+
+#about p {
+  font-size: 1em;
+  color: #fff;
+}
+#about p span {
+  color: #4595d0;
+}
+/* end about */
+/* skill */
+#skill .container-fluid {
+  background-color: #1e2330;
+}
+
+#skill .row .row {
+  color: rgb(255, 255, 255);
+}
+#skill .row .row .card {
+  background-color: #2e3442 !important;
+  height: 10rem;
+}
+
+#skill .card p {
+  font-size: x-small;
+}
+/* end skill */
+/* project */
+#project {
+  margin-top: -100px;
+  padding-top: 100px;
+  background-color: #10141e;
+}
+/* end project */
+/* sertifikat */
+/* end setifikat */
+/* contant */
+#contant .contant-img {
+  display: none;
+}
+
+#contant .container {
+  background-color: #10141e;
+  border-radius: 1%;
+}
+
+#contant input,
+#contant textarea {
+  background-color: #10141e;
+  color: #fff;
+}
+/* end contant */
+/* footer */
+.footer .img-end {
+  width: 10rem;
+  height: 10rem;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 50%;
+}
+/* end footer */
