@@ -1,4 +1,4 @@
-# Syahridhoas.github.io
+# Syahridho.github.io
 
 Config files for my GitHub profile.
 
