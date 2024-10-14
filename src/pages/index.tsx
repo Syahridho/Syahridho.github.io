@@ -1,12 +1,13 @@
-import { RainbowButton } from "@/components/ui/rainbow-button";
+import HomeView from "@/components/view/Home";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className="max-w-[1000px] min-h-screen mx-auto">
-      <div className="">
-        <h1>Hello World</h1>
-        <RainbowButton>Download CV</RainbowButton>
-      </div>
-    </div>
+    <>
+      <Head>
+        <title>Home</title>
+      </Head>
+      <HomeView />
+    </>
   );
 }
