@@ -69,5 +69,5 @@
 }
 
 .active {
-  @apply bg-slate-800 text-white gap-4 dark:bg-slate-800;
+  @apply bg-red-800 text-white gap-4 dark:bg-slate-800;
 }
