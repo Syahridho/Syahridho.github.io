@@ -5,21 +5,58 @@ import {
   SiHtml5,
   SiCss3,
   SiJavascript,
-  SiTsnode,
+  SiTypescript,
   SiReact,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiPhp,
+  SiLaravel,
+  SiMysql,
+  SiFirebase,
+  SiVite,
+  SiPython,
+  SiNextdotjs,
+  SiFigma,
+  SiGithub,
+  SiGit,
+  SiVisualstudiocode,
 } from "react-icons/si";
+import Image from "next/image";
 
 // Array ikon yang akan ditampilkan beserta warnanya
-const icons = [
-  { icon: SiHtml5, title: "HTML5", color: "#E34F26" },
-  { icon: SiCss3, title: "CSS3", color: "#1572B6" },
-  { icon: SiJavascript, title: "JavaScript", color: "#F7DF1E" },
-  { icon: SiTsnode, title: "TypeScript", color: "#3178C6" },
-  { icon: SiReact, title: "React", color: "#61DAFB" },
+const iconsUp = [
+  { icon: SiHtml5, title: "HTML5", color: "#041322" },
+  { icon: SiCss3, title: "CSS3", color: "#041322" },
+  { icon: SiJavascript, title: "JavaScript", color: "#041322" },
+  { icon: SiTypescript, title: "TypeScript", color: "#041322" },
+  { icon: SiReact, title: "React", color: "#041322" },
+  { icon: SiTailwindcss, title: "Tailwind CSS", color: "#041322" },
+  {
+    icon: () => (
+      <Image src="/shadcn.svg" alt="Shadcn/UI" width="15" height="15" />
+    ),
+    title: "Shadcn UI",
+    color: "#041322", // atau warna yang sesuai dengan tema shadcn
+  },
+  { icon: SiNodedotjs, title: "Node.js", color: "#041322" },
+  { icon: SiPhp, title: "PHP", color: "#041322" },
+  { icon: SiLaravel, title: "Laravel", color: "#041322" },
 ];
 
-const firstRow = icons.slice(0, icons.length / 2);
-const secondRow = icons.slice(icons.length / 2);
+const iconsDown = [
+  { icon: SiMysql, title: "MySQL", color: "#041322" },
+  { icon: SiFirebase, title: "Firebase", color: "#041322" },
+  { icon: SiVite, title: "Vite", color: "#041322" },
+  { icon: SiPython, title: "Python", color: "#041322" },
+  { icon: SiNextdotjs, title: "Next.js", color: "#041322" },
+  { icon: SiFigma, title: "Figma", color: "#041322" },
+  { icon: SiGithub, title: "GitHub", color: "#041322" },
+  { icon: SiGit, title: "Git", color: "#041322" },
+  { icon: SiVisualstudiocode, title: "VS Code", color: "#041322" },
+];
+
+// const firstRow = icons.slice(0, icons.length / 2);
+// const secondRow = icons.slice(icons.length / 2);
 
 // Komponen untuk menampilkan ikon
 const IconsCard = ({
@@ -35,7 +72,7 @@ const IconsCard = ({
   return (
     <figure
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative cursor-pointer overflow-hidden rounded-full border px-4 py-2",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
@@ -44,8 +81,8 @@ const IconsCard = ({
     >
       <div className="flex flex-row items-center gap-2">
         {/* Menggunakan komponen ikon dari react-icons dengan warna */}
-        <Icon size={50} color={color} />
-        <h1 className="text-lg font-bold">{title}</h1>
+        <Icon size={14} color={color} />
+        <h1 className="text-sm font-medium">{title}</h1>
       </div>
     </figure>
   );
@@ -53,9 +90,9 @@ const IconsCard = ({
 
 export function MarqueeDemo() {
   return (
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg">
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((item, index) => (
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+      <Marquee pauseOnHover className="[--duration:30s] md:[--duration:40s]">
+        {iconsUp.map((item, index) => (
           <IconsCard
             key={index}
             icon={item.icon}
@@ -64,8 +101,12 @@ export function MarqueeDemo() {
           />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((item, index) => (
+      <Marquee
+        reverse
+        pauseOnHover
+        className="[--duration:30s] md:[--duration:40s]"
+      >
+        {iconsDown.map((item, index) => (
           <IconsCard
             key={index}
             icon={item.icon}

@@ -2,7 +2,10 @@ import { MarqueeDemo } from "@/components/container/Marquee";
 import ContainerLayout from "@/components/layout/ContainerLayout";
 import BlurIn from "@/components/ui/blur-in";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import { siHtml5 } from "simple-icons";
+import { LiaLaptopCodeSolid } from "react-icons/lia";
+import { IoSchoolOutline } from "react-icons/io5";
+import { cn } from "@/lib/utils";
+import GridPattern from "@/components/ui/grid-pattern";
 
 const HomeView = () => {
   return (
@@ -17,6 +20,7 @@ const HomeView = () => {
             Download CV
           </RainbowButton>
         </div>
+
         <div className="my-4">
           <ol className="list-disc list-inside flex flex-col gap-1 text-slate-700 md:flex-row md:gap-4">
             <li>Front End Developer</li>
@@ -33,21 +37,36 @@ const HomeView = () => {
           </p>
         </div>
 
-        {/* Komponen MarqueeDemo */}
-        <MarqueeDemo />
+        <div className=" border-y-[1px] my-6 py-8">
+          <div className="flex items-center gap-2 mb-2">
+            <LiaLaptopCodeSolid className="w-8 h-8" />
+            <h1 className="text-lg font-semibold tracking-wide text-slate-800">
+              Skills
+            </h1>
+          </div>
+          <h1 className="mb-2 text-slate-700">My Coding Skills</h1>
 
-        {/* Menambahkan ikon HTML5 di bawah MarqueeDemo */}
-        <svg
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="50"
-          height="50"
-          fill={`#${siHtml5.hex}`} // Menggunakan warna dari Simple Icons
-        >
-          <title>{siHtml5.title}</title>
-          <path d={siHtml5.path} />
-        </svg>
+          <MarqueeDemo />
+        </div>
+
+        <div className=" border-y-[1px] my-6 py-8">
+          <div className="flex items-center gap-2 mb-2">
+            <IoSchoolOutline className="w-8 h-8" />
+            <h1 className="text-lg font-semibold tracking-wide text-slate-800">
+              Career
+            </h1>
+          </div>
+          <h1 className="mb-2 text-slate-700">My Coding Skills</h1>
+        </div>
+        <GridPattern
+          width={20}
+          height={20}
+          x={-1}
+          y={-1}
+          className={cn(
+            "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] -z-50"
+          )}
+        />
       </ContainerLayout>
     </>
   );
