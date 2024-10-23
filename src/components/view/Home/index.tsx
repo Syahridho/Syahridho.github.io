@@ -6,6 +6,8 @@ import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { IoSchoolOutline } from "react-icons/io5";
 import { cn } from "@/lib/utils";
 import GridPattern from "@/components/ui/grid-pattern";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { careers } from "@/utils/resume";
 
 const HomeView = () => {
   return (
@@ -37,7 +39,7 @@ const HomeView = () => {
           </p>
         </div>
 
-        <div className=" border-y-[1px] my-6 py-8">
+        <div className=" border-t-[1px] my-6 py-8">
           <div className="flex items-center gap-2 mb-2">
             <LiaLaptopCodeSolid className="w-8 h-8" />
             <h1 className="text-lg font-semibold tracking-wide text-slate-800">
@@ -49,18 +51,52 @@ const HomeView = () => {
           <MarqueeDemo />
         </div>
 
-        <div className=" border-y-[1px] my-6 py-8">
+        <div className="border-t-[1px] my-6 py-8">
           <div className="flex items-center gap-2 mb-2">
-            <IoSchoolOutline className="w-8 h-8" />
+            <IoSchoolOutline className="w-7 h-7" />
             <h1 className="text-lg font-semibold tracking-wide text-slate-800">
               Career
             </h1>
           </div>
-          <h1 className="mb-2 text-slate-700">My Coding Skills</h1>
+          <h1 className="mb-2 text-slate-700">My Career</h1>
+
+          <div className="divide-y divide-dashed my-8">
+            {careers.map((item: any, index: any) => (
+              <div
+                key={index}
+                className="relative ml-6 py-8 pl-10 border-l border-dashed flex flex-col gap-1.5"
+              >
+                <div className="absolute -left-6 top-2 flex items-center justify-center bg-white rounded-full z-10">
+                  <Avatar className="border size-12 m-auto">
+                    <AvatarImage
+                      src={item.image}
+                      alt="Profile"
+                      className="object-contain"
+                    />
+                    <AvatarFallback>Unilak</AvatarFallback>
+                  </Avatar>
+                </div>
+
+                <h2 className="text-xs text-muted-foreground">{item.dates}</h2>
+                <h1 className="font-medium leading-none">{item.title}</h1>
+                <h3 className="text-sm text-muted-foreground">
+                  {item.location}
+                </h3>
+                <h3 className="prose dark:prose-invert text-sm text-muted-foreground">
+                  {item.description}
+                </h3>
+              </div>
+            ))}
+          </div>
         </div>
+
+        <div className="text-center text-slate-600 text-sm mt-2 border-t py-6">
+          <h1>@2025 Syahridho Arjuna Syahputra</h1>
+        </div>
+
         <GridPattern
           width={20}
-          height={20}
+          height={16}
           x={-1}
           y={-1}
           className={cn(
