@@ -11,6 +11,16 @@ export const careers: any = [
     links: [],
   },
   {
+    title: "Dashnet ISP",
+    dates: "November 2021 - Desember 2021",
+    location: "Indonesia, Riau",
+    description: "Internship.",
+    image:
+      "https://dash.net.id/wp-content/uploads/2017/10/cropped-dash-32x32.png",
+    mlh: "",
+    links: [],
+  },
+  {
     title: "Lancang Kuning University",
     dates: "July 2022 - Now",
     location: "Indonesia, Riau",
@@ -23,7 +33,7 @@ export const careers: any = [
     title: "Cakaplah.com",
     dates: "November 2024 - Now",
     location: "Indonesia, Riau",
-    description: "Internship",
+    description: "Internship.",
     image:
       "https://www.cakaplah.com/assets/news/15112017/cakaplah_rgc2z_13388.png",
     links: [],

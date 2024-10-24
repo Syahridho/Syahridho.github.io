@@ -5,9 +5,10 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { IoSchoolOutline } from "react-icons/io5";
 import { cn } from "@/lib/utils";
-import GridPattern from "@/components/ui/grid-pattern";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { careers } from "@/utils/resume";
+import DotPattern from "@/components/ui/dot-pattern";
+import GridPattern from "@/components/ui/grid-pattern";
 
 const HomeView = () => {
   return (
@@ -60,13 +61,13 @@ const HomeView = () => {
           </div>
           <h1 className="mb-2 text-slate-700">My Career</h1>
 
-          <div className="divide-y divide-dashed my-8">
+          <div className="divide-y divide-dashed my-4">
             {careers.map((item: any, index: any) => (
               <div
                 key={index}
                 className="relative ml-6 py-8 pl-10 border-l border-dashed flex flex-col gap-1.5"
               >
-                <div className="absolute -left-6 top-2 flex items-center justify-center bg-white rounded-full z-10">
+                <div className="absolute -left-6 top-6 flex items-center justify-center bg-white rounded-full z-10">
                   <Avatar className="border size-12 m-auto">
                     <AvatarImage
                       src={item.image}
@@ -90,10 +91,6 @@ const HomeView = () => {
           </div>
         </div>
 
-        <div className="text-center text-slate-600 text-sm mt-2 border-t py-6">
-          <h1>@2025 Syahridho Arjuna Syahputra</h1>
-        </div>
-
         <GridPattern
           width={20}
           height={16}
@@ -101,6 +98,12 @@ const HomeView = () => {
           y={-1}
           className={cn(
             "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] -z-50"
+          )}
+        />
+
+        <DotPattern
+          className={cn(
+            "[mask-image:radial-gradient(300px_circle_at_right,white,transparent)]"
           )}
         />
       </ContainerLayout>
