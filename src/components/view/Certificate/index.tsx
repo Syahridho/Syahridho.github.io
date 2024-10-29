@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dialog";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const url: string =
   "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcertificates%2Ffrondend%2Fdicoding-belajar-membuat-front-end-web-untuk-pemula.webp?alt=media&token=4d1827af-69d3-4352-b8d7-e28a425b72bf";
@@ -25,6 +26,7 @@ const CertificateView = () => {
     <>
       <ContainerLayout>
         <BlurIn
+          key={"up"}
           word="Certificate"
           className="text-4xl font-bold text-black dark:text-white "
         />
@@ -188,7 +190,8 @@ const CertificateView = () => {
           </Dialog>
         </div>
         <div className="z-10 flex my-8 items-center justify-center">
-          <div
+          <Link
+            href={"/certificate/all"}
             className={cn(
               "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             )}
@@ -197,7 +200,7 @@ const CertificateView = () => {
               <span>✨ See All</span>
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
-          </div>
+          </Link>
         </div>
       </ContainerLayout>
     </>

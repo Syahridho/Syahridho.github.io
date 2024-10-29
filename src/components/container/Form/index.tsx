@@ -45,21 +45,7 @@ const FormContact = () => {
           )}
         />
       </div>
-      <div className="mb-3">
-        <FormField
-          control={form.control}
-          name="Subject"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Subject</FormLabel>
-              <FormControl>
-                <Input placeholder="Subject" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-      </div>
+
       <div className="mb-3 flex flex-col gap-3">
         <Label htmlFor="desc">Description</Label>
         <Textarea placeholder="Type your message here." />

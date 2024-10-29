@@ -6,7 +6,7 @@ import BlurIn from "@/components/ui/blur-in";
 const projects = [
   {
     title: "Chat Collect",
-    href: "https://chatcollect.com",
+    href: "/project/asd",
     dates: "Jan 2024 - Feb 2024",
     active: true,
     description:
@@ -24,7 +24,7 @@ const projects = [
     links: [
       {
         type: "Website",
-        href: "https://chatcollect.com",
+        href: "/project/asd",
         icon: "",
       },
     ],
@@ -33,7 +33,7 @@ const projects = [
   },
   {
     title: "Chat Collect",
-    href: "https://chatcollect.com",
+    href: "/project/asd",
     dates: "Jan 2024 - Feb 2024",
     active: true,
     description:
@@ -51,7 +51,7 @@ const projects = [
     links: [
       {
         type: "Website",
-        href: "https://chatcollect.com",
+        href: "/project/asd",
         icon: "",
       },
     ],
@@ -60,7 +60,7 @@ const projects = [
   },
   {
     title: "Chat Collect",
-    href: "https://chatcollect.com",
+    href: "/project/asd",
     dates: "Jan 2024 - Feb 2024",
     active: true,
     description:
@@ -78,7 +78,7 @@ const projects = [
     links: [
       {
         type: "Website",
-        href: "https://chatcollect.com",
+        href: "/project/asd",
         icon: "",
       },
     ],
@@ -87,7 +87,7 @@ const projects = [
   },
   {
     title: "Chat Collect",
-    href: "https://chatcollect.com",
+    href: "/project/asd",
     dates: "Jan 2024 - Feb 2024",
     active: true,
     description:
@@ -105,7 +105,7 @@ const projects = [
     links: [
       {
         type: "Website",
-        href: "https://chatcollect.com",
+        href: "/project/asd",
         icon: "",
       },
     ],

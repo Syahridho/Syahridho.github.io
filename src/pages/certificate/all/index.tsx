@@ -5,7 +5,7 @@ export default function Certificate() {
   return (
     <>
       <Head>
-        <title>Certificate</title>
+        <title>All Certificate</title>
       </Head>
       <AllCertificate />
     </>
