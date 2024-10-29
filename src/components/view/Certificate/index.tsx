@@ -44,27 +44,25 @@ const CertificateView = () => {
                 </Card>
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-md">
+            <DialogContent>
               <DialogHeader>
-                <div className="relative w-full h-full">
-                  <Image
-                    width={500}
-                    height={500}
-                    src={url}
-                    alt="certificate"
-                    className="w-full object-contain"
-                  />
-                </div>
+                <Image
+                  width={700}
+                  height={700}
+                  src={url}
+                  alt="certificate"
+                  className="w-full object-contain"
+                />
               </DialogHeader>
             </DialogContent>
           </Dialog>
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card className="overflow-hidden">
+                <Card>
                   <Image
                     src={url}
-                    width={300}
+                    width={350}
                     height={200}
                     alt="certificate"
                     className="object-cover w-full h-full"
@@ -72,27 +70,25 @@ const CertificateView = () => {
                 </Card>
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-md">
+            <DialogContent>
               <DialogHeader>
-                <div className="relative w-full h-full">
-                  <Image
-                    width={500}
-                    height={500}
-                    src={url}
-                    alt="certificate"
-                    className="w-full object-contain"
-                  />
-                </div>
+                <Image
+                  width={700}
+                  height={700}
+                  src={url}
+                  alt="certificate"
+                  className="w-full object-contain"
+                />
               </DialogHeader>
             </DialogContent>
           </Dialog>
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card className="overflow-hidden">
+                <Card>
                   <Image
                     src={url}
-                    width={300}
+                    width={350}
                     height={200}
                     alt="certificate"
                     className="object-cover w-full h-full"
@@ -100,27 +96,25 @@ const CertificateView = () => {
                 </Card>
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-md">
+            <DialogContent>
               <DialogHeader>
-                <div className="relative w-full h-full">
-                  <Image
-                    width={500}
-                    height={500}
-                    src={url}
-                    alt="certificate"
-                    className="w-full object-contain"
-                  />
-                </div>
+                <Image
+                  width={700}
+                  height={700}
+                  src={url}
+                  alt="certificate"
+                  className="w-full object-contain"
+                />
               </DialogHeader>
             </DialogContent>
           </Dialog>
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card className="overflow-hidden">
+                <Card>
                   <Image
                     src={url}
-                    width={300}
+                    width={350}
                     height={200}
                     alt="certificate"
                     className="object-cover w-full h-full"
@@ -128,27 +122,25 @@ const CertificateView = () => {
                 </Card>
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-md">
+            <DialogContent>
               <DialogHeader>
-                <div className="relative w-full h-full">
-                  <Image
-                    width={500}
-                    height={500}
-                    src={url}
-                    alt="certificate"
-                    className="w-full object-contain"
-                  />
-                </div>
+                <Image
+                  width={700}
+                  height={700}
+                  src={url}
+                  alt="certificate"
+                  className="w-full object-contain"
+                />
               </DialogHeader>
             </DialogContent>
           </Dialog>
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card className="overflow-hidden">
+                <Card>
                   <Image
                     src={url}
-                    width={300}
+                    width={350}
                     height={200}
                     alt="certificate"
                     className="object-cover w-full h-full"
@@ -156,27 +148,25 @@ const CertificateView = () => {
                 </Card>
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-md">
+            <DialogContent>
               <DialogHeader>
-                <div className="relative w-full h-full">
-                  <Image
-                    width={500}
-                    height={500}
-                    src={url}
-                    alt="certificate"
-                    className="w-full object-contain"
-                  />
-                </div>
+                <Image
+                  width={700}
+                  height={700}
+                  src={url}
+                  alt="certificate"
+                  className="w-full object-contain"
+                />
               </DialogHeader>
             </DialogContent>
           </Dialog>
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card className="overflow-hidden">
+                <Card>
                   <Image
                     src={url}
-                    width={300}
+                    width={350}
                     height={200}
                     alt="certificate"
                     className="object-cover w-full h-full"
@@ -184,17 +174,15 @@ const CertificateView = () => {
                 </Card>
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-md">
+            <DialogContent>
               <DialogHeader>
-                <div className="relative w-full h-full">
-                  <Image
-                    width={500}
-                    height={500}
-                    src={url}
-                    alt="certificate"
-                    className="w-full object-contain"
-                  />
-                </div>
+                <Image
+                  width={700}
+                  height={700}
+                  src={url}
+                  alt="certificate"
+                  className="w-full object-contain"
+                />
               </DialogHeader>
             </DialogContent>
           </Dialog>
