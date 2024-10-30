@@ -68,7 +68,8 @@ const config: Config = {
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
   			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
   			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
-  			'shiny-text': 'shiny-text 8s infinite'
+  			'shiny-text': 'shiny-text 8s infinite',
+  			pulse: 'pulse var(--duration) ease-out infinite'
   		},
   		keyframes: {
   			rainbow: {
@@ -120,6 +121,14 @@ const config: Config = {
   				},
   				'30%, 60%': {
   					'background-position': 'calc(100% + var(--shiny-width)) 0'
+  				}
+  			},
+  			pulse: {
+  				'0%, 100%': {
+  					boxShadow: '0 0 0 0 var(--pulse-color)'
+  				},
+  				'50%': {
+  					boxShadow: '0 0 0 8px var(--pulse-color)'
   				}
   			}
   		},

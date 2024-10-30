@@ -21,6 +21,27 @@ import Link from "next/link";
 const url: string =
   "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcertificates%2Ffrondend%2Fdicoding-belajar-membuat-front-end-web-untuk-pemula.webp?alt=media&token=4d1827af-69d3-4352-b8d7-e28a425b72bf";
 
+const datas = [
+  {
+    url: url,
+  },
+  {
+    url: url,
+  },
+  {
+    url: url,
+  },
+  {
+    url: url,
+  },
+  {
+    url: url,
+  },
+  {
+    url: url,
+  },
+];
+
 const CertificateView = () => {
   return (
     <>
@@ -32,162 +53,34 @@ const CertificateView = () => {
         />
         <h1 className="mb-8">I have certificates from several bootcamps.</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card>
+          {datas.map((data, index) => (
+            <Dialog key={index}>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="p-0 h-auto w-auto">
+                  <Card>
+                    <Image
+                      src={data.url}
+                      width={350}
+                      height={200}
+                      alt="certificate"
+                      className="object-cover w-full h-full"
+                    />
+                  </Card>
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
                   <Image
-                    src={url}
-                    width={350}
-                    height={200}
+                    width={700}
+                    height={700}
+                    src={data.url}
                     alt="certificate"
-                    className="object-cover w-full h-full"
+                    className="w-full object-contain"
                   />
-                </Card>
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <Image
-                  width={700}
-                  height={700}
-                  src={url}
-                  alt="certificate"
-                  className="w-full object-contain"
-                />
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card>
-                  <Image
-                    src={url}
-                    width={350}
-                    height={200}
-                    alt="certificate"
-                    className="object-cover w-full h-full"
-                  />
-                </Card>
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <Image
-                  width={700}
-                  height={700}
-                  src={url}
-                  alt="certificate"
-                  className="w-full object-contain"
-                />
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card>
-                  <Image
-                    src={url}
-                    width={350}
-                    height={200}
-                    alt="certificate"
-                    className="object-cover w-full h-full"
-                  />
-                </Card>
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <Image
-                  width={700}
-                  height={700}
-                  src={url}
-                  alt="certificate"
-                  className="w-full object-contain"
-                />
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card>
-                  <Image
-                    src={url}
-                    width={350}
-                    height={200}
-                    alt="certificate"
-                    className="object-cover w-full h-full"
-                  />
-                </Card>
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <Image
-                  width={700}
-                  height={700}
-                  src={url}
-                  alt="certificate"
-                  className="w-full object-contain"
-                />
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card>
-                  <Image
-                    src={url}
-                    width={350}
-                    height={200}
-                    alt="certificate"
-                    className="object-cover w-full h-full"
-                  />
-                </Card>
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <Image
-                  width={700}
-                  height={700}
-                  src={url}
-                  alt="certificate"
-                  className="w-full object-contain"
-                />
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="outline" className="p-0 h-auto w-auto">
-                <Card>
-                  <Image
-                    src={url}
-                    width={350}
-                    height={200}
-                    alt="certificate"
-                    className="object-cover w-full h-full"
-                  />
-                </Card>
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <Image
-                  width={700}
-                  height={700}
-                  src={url}
-                  alt="certificate"
-                  className="w-full object-contain"
-                />
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          ))}
         </div>
         <div className="z-10 flex my-8 items-center justify-center">
           <Link

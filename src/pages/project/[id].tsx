@@ -1,7 +1,9 @@
+import DetailProjectView from "@/components/view/DetailProject";
+
 const DetailProject = () => {
   return (
     <div>
-      <h1>Hello</h1>
+      <DetailProjectView />
     </div>
   );
 };
