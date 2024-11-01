@@ -4,6 +4,10 @@ import { useRouter } from "next/router"; // Import useRouter
 import type { NextPage } from "next";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+import FlickeringGrid from "@/components/ui/flickering-grid";
+import { BorderBeam } from "@/components/ui/border-beam";
+import WordPullUp from "@/components/ui/word-pull-up";
 
 interface NavItem {
   title: string;
@@ -46,11 +50,41 @@ const Navbar: NextPage = () => {
   return (
     <div className="fixed top-0 left-0 w-full z-40 bg-white shadow-sm md:sticky md:h-screen md:w-96 md:pt-16 dark:bg-gray-900 dark:shadow-gray-700">
       <div className="container mx-auto px-4 relative">
-        <div className="h-14 flex justify-between items-center md:justify-center md:h-auto md:mb-4 md:py-4 md:bg-slate-50 rounded-xl relative card-profile md:dark:bg-slate-800 md:before:shadow-rounded-light md:before:dark:!shadow-rounded-dark md:after:!shadow-rounded-light md:after:dark:!shadow-rounded-dark">
-          <div className="flex items-center gap-2 md:flex-col">
-            <h1 className="font-medium text-center">
-              Syahridho Arjuna Syahputra
-            </h1>
+        <div className="flex justify-between items-center md:justify-center md:h-auto md:mb-4  rounded-xl relative card-profile md:dark:bg-slate-800 md:before:shadow-rounded-light md:before:dark:!shadow-rounded-dark md:after:!shadow-rounded-light md:after:dark:!shadow-rounded-dark">
+          <h1 className="md:hidden">Syahridho Arjuna Syahputra</h1>
+          <div className="relative py-4 hidden md:flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background shadow-sm">
+            <div className="relative z-50 rounded-full mb-4 shadow-xl">
+              <Image
+                src="https://media.licdn.com/dms/image/v2/D5603AQGWo4CLtxQywA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728105177466?e=1735776000&v=beta&t=_YPuOCPFvap6RxXjkMpiCP0mYiXFX6V2n0qkM9UHbMg"
+                width={100}
+                height={100}
+                alt="profile"
+                className="rounded-full"
+              />
+              <BorderBeam
+                size={300}
+                duration={12}
+                delay={9}
+                colorFrom="#6B7280"
+                colorTo="#6B7280"
+              />
+            </div>
+
+            <WordPullUp
+              className="text-black dark:text-white text-base font-base tracking-base shadow"
+              words="Syahridho Arjuna Syahputra"
+            />
+
+            <FlickeringGrid
+              className="z-0 absolute inset-0 size-full"
+              squareSize={4}
+              gridGap={6}
+              color="#6B7280"
+              maxOpacity={0.5}
+              flickerChance={0.1}
+              height={800}
+              width={800}
+            />
           </div>
           <button
             id="hamburger"

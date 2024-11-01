@@ -18,6 +18,7 @@ import { useState } from "react";
 import BlurIn from "@/components/ui/blur-in";
 import { FaArrowLeft } from "react-icons/fa6";
 import Link from "next/link";
+import BlurFade from "@/components/ui/blur-fade";
 
 const url: string =
   "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcertificates%2Ffrondend%2Fdicoding-belajar-membuat-front-end-web-untuk-pemula.webp?alt=media&token=4d1827af-69d3-4352-b8d7-e28a425b72bf";
@@ -88,35 +89,37 @@ export default function AllCertificate() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-x-4 gap-y-6">
         {datas.map((data, index) => (
-          <Dialog key={index}>
-            <DialogTrigger asChild>
-              <Button
-                variant="outline"
-                className="p-0 m-0 h-64 w-96 sm:h-48 sm:w-64 xl:h-40 xl:w-56"
-              >
-                <Card>
+          <BlurFade key={index} delay={0.12 * index}>
+            <Dialog key={index}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="p-0 m-0 h-64 w-96 sm:h-48 sm:w-64 xl:h-40 xl:w-56"
+                >
+                  <Card>
+                    <Image
+                      src={data.url}
+                      width={350}
+                      height={200}
+                      alt="certificate"
+                      className="object-cover w-full h-full"
+                    />
+                  </Card>
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
                   <Image
+                    width={700}
+                    height={700}
                     src={data.url}
-                    width={350}
-                    height={200}
                     alt="certificate"
-                    className="object-cover w-full h-full"
+                    className="w-full object-contain"
                   />
-                </Card>
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <Image
-                  width={700}
-                  height={700}
-                  src={data.url}
-                  alt="certificate"
-                  className="w-full object-contain"
-                />
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          </BlurFade>
         ))}
       </div>
     </div>
