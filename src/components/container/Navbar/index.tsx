@@ -51,7 +51,7 @@ const Navbar: NextPage = () => {
     <div className="fixed top-0 left-0 w-full z-40 bg-white shadow-sm md:sticky md:h-screen md:w-96 md:pt-16 dark:bg-gray-900 dark:shadow-gray-700">
       <div className="container mx-auto px-4 relative">
         <div className="flex justify-between items-center md:justify-center md:h-auto md:mb-4  rounded-xl relative card-profile md:dark:bg-slate-800 md:before:shadow-rounded-light md:before:dark:!shadow-rounded-dark md:after:!shadow-rounded-light md:after:dark:!shadow-rounded-dark">
-          <h1 className="md:hidden">Syahridho Arjuna Syahputra</h1>
+          <h1 className="md:hidden font-medium">Syahridho Arjuna Syahputra</h1>
           <div className="relative py-4 hidden md:flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background shadow-sm">
             <div className="relative z-50 rounded-full mb-4 shadow-xl">
               <Image
@@ -71,7 +71,7 @@ const Navbar: NextPage = () => {
             </div>
 
             <WordPullUp
-              className="text-black dark:text-white text-base font-base tracking-base shadow"
+              className="text-slate-800 dark:text-white text-base font-base tracking-base"
               words="Syahridho Arjuna Syahputra"
             />
 
@@ -82,7 +82,7 @@ const Navbar: NextPage = () => {
               color="#6B7280"
               maxOpacity={0.5}
               flickerChance={0.1}
-              height={800}
+              height={85}
               width={800}
             />
           </div>
@@ -97,10 +97,9 @@ const Navbar: NextPage = () => {
         </div>
         <AnimatePresence>
           <div className={`${!toggle && "hidden"} md:block h-screen md:h-auto`}>
-            <nav className="relative flex flex-col gap-1 py-4 border-y border-slate-200">
-              {/* Animated background block */}
+            <nav className="relative flex flex-col py-4 border-y border-slate-200">
               <motion.div
-                className="absolute left-0 bg-blue-500/10 dark:bg-blue-500/20 rounded-md"
+                className="absolute left-0 bg-blue-900/10 border-l-2 border-gray-900/50 dark:bg-blue-500/20"
                 layoutId="activeBackground"
                 initial={false}
                 animate={{
@@ -113,26 +112,25 @@ const Navbar: NextPage = () => {
                 }}
                 style={{
                   width: "100%",
-                  height: "38px",
+                  height: "40px",
                   zIndex: 0,
                 }}
               />
 
-              {/* Nav Items */}
               {navs.map((nav, index) => (
                 <motion.div
                   key={index}
                   className="relative"
-                  whileHover={{ scale: 1.02 }}
+                  // whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
                   <Link
                     href={nav.href}
-                    className={`block px-4 py-2 relative z-10 rounded-md transition-colors
+                    className={`block px-4 py-2 mb-[2px] relative z-10 transition-colors
                       ${
                         activePath === nav.href
-                          ? "text-blue-600 font-medium dark:text-blue-400"
-                          : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                          ? ""
+                          : "text-gray-600  hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                       }`}
                   >
                     {nav.title}

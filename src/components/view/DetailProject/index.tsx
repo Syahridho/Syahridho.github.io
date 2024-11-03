@@ -23,7 +23,7 @@ const DetailProjectView = () => {
           "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] -z-50"
         )}
       />
-      <Link className="flex items-center text-slate-600" href={"/certificate"}>
+      <Link className="flex items-center text-slate-600" href={"/project"}>
         <div className="border rounded-full p-2 my-2 mr-2">
           <FaArrowLeft />
         </div>
