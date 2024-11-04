@@ -8,6 +8,16 @@ import Image from "next/image";
 import FlickeringGrid from "@/components/ui/flickering-grid";
 import { BorderBeam } from "@/components/ui/border-beam";
 import WordPullUp from "@/components/ui/word-pull-up";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
 interface NavItem {
   title: string;
@@ -37,6 +47,8 @@ const Navbar: NextPage = () => {
   const router = useRouter(); // Use Next.js router
   const [toggle, setToggle] = useState<boolean>(false);
   const [activePath, setActivePath] = useState<string>(router.pathname); // Set initial path based on router.pathname
+  const [loadingImage, setLoadingImage] = useState(true);
+  const [modalImageLoading, setModalImageLoading] = useState(true);
 
   useEffect(() => {
     // Update activePath when the route changes
@@ -48,27 +60,73 @@ const Navbar: NextPage = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-40 bg-white shadow-sm md:sticky md:h-screen md:w-96 md:pt-16 dark:bg-gray-900 dark:shadow-gray-700">
+    <div className="fixed top-0 py-2 left-0 w-full z-40 bg-white shadow-sm md:sticky md:h-screen md:w-96 md:pt-16 dark:bg-gray-900 dark:shadow-gray-700">
       <div className="container mx-auto px-4 relative">
         <div className="flex justify-between items-center md:justify-center md:h-auto md:mb-4  rounded-xl relative card-profile md:dark:bg-slate-800 md:before:shadow-rounded-light md:before:dark:!shadow-rounded-dark md:after:!shadow-rounded-light md:after:dark:!shadow-rounded-dark">
           <h1 className="md:hidden font-medium">Syahridho Arjuna Syahputra</h1>
           <div className="relative py-4 hidden md:flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background shadow-sm">
-            <div className="relative z-50 rounded-full mb-4 shadow-xl">
-              <Image
-                src="https://media.licdn.com/dms/image/v2/D5603AQGWo4CLtxQywA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728105177466?e=1735776000&v=beta&t=_YPuOCPFvap6RxXjkMpiCP0mYiXFX6V2n0qkM9UHbMg"
-                width={100}
-                height={100}
-                alt="profile"
-                className="rounded-full"
-              />
-              <BorderBeam
-                size={300}
-                duration={12}
-                delay={9}
-                colorFrom="#6B7280"
-                colorTo="#6B7280"
-              />
-            </div>
+            {/* <div className="relative z-50 rounded-full mb-4 shadow-xl"> */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="p-0 h-auto w-auto rounded-full z-50 mb-4 "
+                >
+                  <Card className="rounded-full">
+                    <div className="relative">
+                      {loadingImage && (
+                        <Skeleton className="absolute inset-0 w-full h-full" />
+                      )}
+                      <Image
+                        src={
+                          "https://media.licdn.com/dms/image/v2/D5603AQGWo4CLtxQywA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728105177466?e=1735776000&v=beta&t=_YPuOCPFvap6RxXjkMpiCP0mYiXFX6V2n0qkM9UHbMg"
+                        }
+                        loading="lazy"
+                        width={100}
+                        height={100}
+                        alt="certificate"
+                        className={cn(
+                          "rounded-full transition-opacity duration-300 aspect-[1/1]",
+                          loadingImage ? "opacity-0" : "opacity-100"
+                        )}
+                        onLoad={() => setLoadingImage(false)}
+                      />
+                    </div>
+                  </Card>
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="w-auto">
+                <DialogHeader>
+                  <div>
+                    {modalImageLoading && (
+                      <Skeleton className="absolute inset-0 w-full " />
+                    )}
+                    <Image
+                      src={
+                        "https://media.licdn.com/dms/image/v2/D5603AQGWo4CLtxQywA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728105177466?e=1735776000&v=beta&t=_YPuOCPFvap6RxXjkMpiCP0mYiXFX6V2n0qkM9UHbMg"
+                      }
+                      width={300}
+                      height={300}
+                      alt="certificate"
+                      className={cn(
+                        "object-contain",
+                        modalImageLoading ? "opacity-0" : "opacity-100"
+                      )}
+                      onLoad={() => setModalImageLoading(false)}
+                    />
+                  </div>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+
+            <BorderBeam
+              size={300}
+              duration={12}
+              delay={9}
+              colorFrom="#6B7280"
+              colorTo="#6B7280"
+            />
+            {/* </div> */}
 
             <WordPullUp
               className="text-slate-800 dark:text-white text-base font-base tracking-base"
