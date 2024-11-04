@@ -18,6 +18,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
+import ShinyButton from "@/components/ui/shiny-button";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaInstagram,
+  FaTelegram,
+  FaRegEnvelope,
+} from "react-icons/fa";
 
 interface NavItem {
   title: string;
@@ -201,12 +209,52 @@ const Navbar: NextPage = () => {
                 Social Media
               </h1>
               <ul className="flex justify-center items-center flex-wrap gap-2 py-4">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>
+                  <Link
+                    href={
+                      "mailto:syahridhosyahputra@gmail.com?Subject=I want help you"
+                    }
+                    target="_blank"
+                  >
+                    <ShinyButton className="p-3 rounded-full">
+                      <FaRegEnvelope />
+                    </ShinyButton>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={"https://www.linkedin.com/in/syahridho/"}
+                    target="_blank"
+                  >
+                    <ShinyButton className="p-3 rounded-full">
+                      <FaLinkedin />
+                    </ShinyButton>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"https://github.com/Syahridho"} target="_blank">
+                    <ShinyButton className="p-3 rounded-full">
+                      <FaGithub />
+                    </ShinyButton>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={"https://www.instagram.com/syahridhoa_/"}
+                    target="_blank"
+                  >
+                    <ShinyButton className="p-3 rounded-full">
+                      <FaInstagram />
+                    </ShinyButton>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={"https://t.me/syahridhoo"} target="_blank">
+                    <ShinyButton className="p-3 rounded-full">
+                      <FaTelegram />
+                    </ShinyButton>
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
