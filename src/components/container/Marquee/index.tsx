@@ -14,45 +14,41 @@ import {
   SiMysql,
   SiFirebase,
   SiVite,
-  SiPython,
   SiNextdotjs,
   SiFigma,
   SiGithub,
   SiGit,
   SiVisualstudiocode,
+  SiAlpinedotjs,
+  SiShadcnui,
+  SiPython,
 } from "react-icons/si";
-import Image from "next/image";
 
 // Array ikon yang akan ditampilkan beserta warnanya
 const iconsUp = [
-  { icon: SiHtml5, title: "HTML5", color: "#041322" },
-  { icon: SiCss3, title: "CSS3", color: "#041322" },
-  { icon: SiJavascript, title: "JavaScript", color: "#041322" },
-  { icon: SiTypescript, title: "TypeScript", color: "#041322" },
-  { icon: SiReact, title: "React", color: "#041322" },
-  { icon: SiTailwindcss, title: "Tailwind CSS", color: "#041322" },
-  {
-    icon: () => (
-      <Image src="/shadcn.svg" alt="Shadcn/UI" width="15" height="15" />
-    ),
-    title: "Shadcn UI",
-    color: "#041322", // atau warna yang sesuai dengan tema shadcn
-  },
-  { icon: SiNodedotjs, title: "Node.js", color: "#041322" },
-  { icon: SiPhp, title: "PHP", color: "#041322" },
-  { icon: SiLaravel, title: "Laravel", color: "#041322" },
+  { icon: SiHtml5, title: "HTML5", color: "#E34F26" },
+  { icon: SiCss3, title: "CSS3", color: "#1572B6" },
+  { icon: SiJavascript, title: "JavaScript", color: "#F7DF1E" },
+  { icon: SiTailwindcss, title: "Tailwind CSS", color: "#06B6D4" },
+  { icon: SiShadcnui, title: "Shadcn UI", color: "#000000" },
+  { icon: SiTypescript, title: "TypeScript", color: "#3178C6" },
+  { icon: SiReact, title: "React", color: "#61DAFB" },
+  { icon: SiNextdotjs, title: "Next.js", color: "#000000" },
+  { icon: SiNodedotjs, title: "Node.js", color: "#339933" },
+  { icon: SiPython, title: "Python", color: "#4B8BBE" },
 ];
 
 const iconsDown = [
-  { icon: SiMysql, title: "MySQL", color: "#041322" },
-  { icon: SiFirebase, title: "Firebase", color: "#041322" },
-  { icon: SiVite, title: "Vite", color: "#041322" },
-  { icon: SiPython, title: "Python", color: "#041322" },
-  { icon: SiNextdotjs, title: "Next.js", color: "#041322" },
-  { icon: SiFigma, title: "Figma", color: "#041322" },
-  { icon: SiGithub, title: "GitHub", color: "#041322" },
-  { icon: SiGit, title: "Git", color: "#041322" },
-  { icon: SiVisualstudiocode, title: "VS Code", color: "#041322" },
+  { icon: SiAlpinedotjs, title: "Alpine.Js", color: "#8BC0D0" },
+  { icon: SiPhp, title: "PHP", color: "#777BB4" },
+  { icon: SiLaravel, title: "Laravel", color: "#FF2D20" },
+  { icon: SiMysql, title: "MySQL", color: "#4479A1" },
+  { icon: SiFirebase, title: "Firebase", color: "#FFCA28" },
+  { icon: SiVite, title: "Vite", color: "#646CFF" },
+  { icon: SiFigma, title: "Figma", color: "#F24E1E" },
+  { icon: SiGithub, title: "GitHub", color: "#181717" },
+  { icon: SiGit, title: "Git", color: "#F05032" },
+  { icon: SiVisualstudiocode, title: "VS Code", color: "#007ACC" },
 ];
 
 // const firstRow = icons.slice(0, icons.length / 2);

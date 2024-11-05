@@ -73,7 +73,6 @@ const Navbar: NextPage = () => {
         <div className="flex justify-between items-center md:justify-center md:h-auto md:mb-4  rounded-xl relative card-profile md:dark:bg-slate-800 md:before:shadow-rounded-light md:before:dark:!shadow-rounded-dark md:after:!shadow-rounded-light md:after:dark:!shadow-rounded-dark">
           <h1 className="md:hidden font-medium">Syahridho Arjuna Syahputra</h1>
           <div className="relative py-4 hidden md:flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background shadow-sm">
-            {/* <div className="relative z-50 rounded-full mb-4 shadow-xl"> */}
             <Dialog>
               <DialogTrigger asChild>
                 <Button
@@ -131,10 +130,9 @@ const Navbar: NextPage = () => {
               size={300}
               duration={12}
               delay={9}
-              colorFrom="#6B7280"
-              colorTo="#6B7280"
+              colorFrom="#bcbcbc"
+              colorTo="#bcbcbc"
             />
-            {/* </div> */}
 
             <WordPullUp
               className="text-slate-800 dark:text-white text-base font-base tracking-base"
@@ -192,7 +190,7 @@ const Navbar: NextPage = () => {
                 >
                   <Link
                     href={nav.href}
-                    className={`block px-4 py-2 mb-[2px] relative z-10 transition-colors
+                    className={`block px-4 py-2 mb-[2px] relative z-10 transition-colors tracking-wide
                       ${
                         activePath === nav.href
                           ? ""
