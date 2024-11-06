@@ -82,7 +82,7 @@ const Navbar: NextPage = () => {
                   <Card className="rounded-full">
                     <div className="relative">
                       {loadingImage && (
-                        <Skeleton className="absolute inset-0 w-full h-full" />
+                        <Skeleton className="absolute inset-0 w-full h-full rounded-full" />
                       )}
                       <Image
                         src={
