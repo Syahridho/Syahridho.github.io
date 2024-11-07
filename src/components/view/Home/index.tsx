@@ -1,63 +1,57 @@
-import { MarqueeDemo } from "@/components/container/Marquee";
-import BlurIn from "@/components/ui/blur-in";
-import { RainbowButton } from "@/components/ui/rainbow-button";
-import { LiaLaptopCodeSolid } from "react-icons/lia";
-import { IoSchoolOutline } from "react-icons/io5";
-import { FaGithub } from "react-icons/fa";
+import { home } from "@/utils/resume";
 import { cn } from "@/lib/utils";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { careers } from "@/utils/resume";
+import CareerCard from "@/components/container/CareerCard";
+import HeaderHome from "@/components/container/HeaderHome";
+import GitHubCalendar from "react-github-calendar";
 import DotPattern from "@/components/ui/dot-pattern";
 import GridPattern from "@/components/ui/grid-pattern";
-import GitHubCalendar from "react-github-calendar";
+import BlurIn from "@/components/ui/blur-in";
+import { RainbowButton } from "@/components/ui/rainbow-button";
+import { MarqueeDemo } from "@/components/container/Marquee";
+import { LiaLaptopCodeSolid } from "react-icons/lia";
+import { IoSchoolOutline } from "react-icons/io5";
+import { DiGithubBadge } from "react-icons/di";
 
 const HomeView = () => {
   return (
     <>
       <div className="flex flex-col md:justify-between md:items-center md:flex-row">
         <BlurIn
-          word="Hi, I'm Syahridho Arjuna Syahputra"
+          word={`Hi, I'm ${home.name}`}
           className="text-4xl font-bold text-black dark:text-white"
         />
-        <RainbowButton className="hidden md:block text-nowrap">
+        <RainbowButton
+          className="hidden md:block text-nowrap"
+          onClick={() => window.open(home.cv, "_blank")}
+          rel="noopener noreferrer"
+        >
           Download CV
         </RainbowButton>
       </div>
 
       <div className="my-4">
         <ol className="list-disc list-inside flex flex-col gap-1 text-slate-700 md:flex-row md:gap-4">
-          <li>Front End Developer</li>
-          <li>Based in Pekanbaru, Riau, Indonesia</li>
+          <li>{home.role}</li>
+          <li>{home.location}</li>
         </ol>
       </div>
       <div>
-        <p className="text-slate-700">
-          I am a Frontend Developer with a focus on creating aesthetic and
-          responsive user interfaces. With skills in HTML, CSS, JavaScript,
-          Tailwind, React JS and others, I have developed a variety of projects,
-          ranging from business websites to interactive web applications.
-        </p>
+        <p className="text-slate-700">{home.description}</p>
       </div>
 
-      <div className=" border-t-[1px] my-6 py-8">
-        <div className="flex items-center gap-2 mb-2">
-          <LiaLaptopCodeSolid className="w-8 h-8" />
-          <h1 className="text-lg font-semibold tracking-wide text-slate-800">
-            Skills
-          </h1>
-        </div>
-        <h1 className="mb-2 text-slate-700">My Coding Skills</h1>
+      <HeaderHome
+        title={"Skils"}
+        subTitle={"My Coding Skills"}
+        icon={LiaLaptopCodeSolid}
+      >
+        <MarqueeDemo data={home.tech} />
+      </HeaderHome>
 
-        <MarqueeDemo />
-      </div>
-      <div className="border-t-[1px] my-6 py-8">
-        <div className="flex items-center gap-2 mb-2">
-          <FaGithub className="w-5 h-5 " />
-          <h1 className="text-lg font-semibold tracking-wide text-slate-800">
-            Contribution
-          </h1>
-        </div>
-        <h1 className="mb-2 text-slate-700">My Contribution in github</h1>
+      <HeaderHome
+        title={"Contribution"}
+        subTitle={"My Contribution in github"}
+        icon={DiGithubBadge}
+      >
         <div className="w-full block my-6">
           <GitHubCalendar
             username="syahridho"
@@ -69,44 +63,19 @@ const HomeView = () => {
             }}
           />
         </div>
-      </div>
+      </HeaderHome>
 
-      <div className="border-t-[1px] my-6 py-8">
-        <div className="flex items-center gap-2 mb-2">
-          <IoSchoolOutline className="w-7 h-7" />
-          <h1 className="text-lg font-semibold tracking-wide text-slate-800">
-            Career
-          </h1>
-        </div>
-        <h1 className="mb-2 text-slate-700">My Career</h1>
-
+      <HeaderHome
+        title={"Career"}
+        subTitle={"My Career"}
+        icon={IoSchoolOutline}
+      >
         <div className="divide-y divide-dashed my-4">
-          {careers.map((item: any, index: any) => (
-            <div
-              key={index}
-              className="relative ml-6 py-8 pl-10 border-l border-dashed flex flex-col gap-1.5"
-            >
-              <div className="absolute -left-6 top-6 flex items-center justify-center bg-white rounded-full z-10">
-                <Avatar className="border size-12 m-auto">
-                  <AvatarImage
-                    src={item.image}
-                    alt="Profile"
-                    className="object-contain"
-                  />
-                  <AvatarFallback>Unilak</AvatarFallback>
-                </Avatar>
-              </div>
-
-              <h2 className="text-xs text-muted-foreground">{item.dates}</h2>
-              <h1 className="font-medium leading-none">{item.title}</h1>
-              <h3 className="text-sm text-muted-foreground">{item.location}</h3>
-              <h3 className="prose dark:prose-invert text-sm text-muted-foreground">
-                {item.description}
-              </h3>
-            </div>
+          {home.career.map((item: any, index: any) => (
+            <CareerCard key={index} career={item} />
           ))}
         </div>
-      </div>
+      </HeaderHome>
 
       <GridPattern
         width={20}
