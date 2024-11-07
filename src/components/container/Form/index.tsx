@@ -9,21 +9,22 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ShimmerButton from "@/components/ui/shimmer-button";
 import { Textarea } from "@/components/ui/textarea";
-import { useForm } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
-const FormContact = () => {
-  const form = useForm();
+const FormContact = ({ isLoading }: any) => {
+  const { control, register } = useFormContext();
+
   return (
     <>
       <div className="mb-3">
         <FormField
-          control={form.control}
-          name="Fullname"
+          control={control}
+          name="fullname"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Fullname</FormLabel>
+              <FormLabel htmlFor="fullname">Fullname</FormLabel>
               <FormControl>
-                <Input placeholder="Fullname" {...field} />
+                <Input placeholder="Fullname" id="fullname" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -32,26 +33,29 @@ const FormContact = () => {
       </div>
       <div className="mb-3">
         <FormField
-          control={form.control}
-          name="Email"
+          control={control}
+          name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel htmlFor="email">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Email" {...field} />
+                <Input placeholder="Email" id="email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
       </div>
-
       <div className="mb-3 flex flex-col gap-3">
         <Label htmlFor="desc">Description</Label>
-        <Textarea placeholder="Type your message here." />
+        <Textarea
+          placeholder="Type your message here."
+          id="desc"
+          {...register("desc")}
+        />
       </div>
-      <ShimmerButton className="shadow-2xl" onClick={() => console.log("tes")}>
-        <span className="">Send</span>
+      <ShimmerButton className="shadow-2xl" type="submit">
+        <span className="">{isLoading ? "Loading..." : "Send"}</span>
       </ShimmerButton>
     </>
   );

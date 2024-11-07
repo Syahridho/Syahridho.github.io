@@ -3,11 +3,13 @@ import BlurIn from "@/components/ui/blur-in";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { IoSchoolOutline } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { careers } from "@/utils/resume";
 import DotPattern from "@/components/ui/dot-pattern";
 import GridPattern from "@/components/ui/grid-pattern";
+import GitHubCalendar from "react-github-calendar";
 
 const HomeView = () => {
   return (
@@ -47,6 +49,26 @@ const HomeView = () => {
         <h1 className="mb-2 text-slate-700">My Coding Skills</h1>
 
         <MarqueeDemo />
+      </div>
+      <div className="border-t-[1px] my-6 py-8">
+        <div className="flex items-center gap-2 mb-2">
+          <FaGithub className="w-5 h-5 " />
+          <h1 className="text-lg font-semibold tracking-wide text-slate-800">
+            Contribution
+          </h1>
+        </div>
+        <h1 className="mb-2 text-slate-700">My Contribution in github</h1>
+        <div className="w-full block my-6">
+          <GitHubCalendar
+            username="syahridho"
+            colorScheme="light"
+            blockSize={10.5}
+            style={{
+              overflow: "hidden",
+              maxWidth: "100%",
+            }}
+          />
+        </div>
       </div>
 
       <div className="border-t-[1px] my-6 py-8">
