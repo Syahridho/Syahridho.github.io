@@ -24,7 +24,13 @@ const FormContact = ({ isLoading }: any) => {
             <FormItem>
               <FormLabel htmlFor="fullname">Fullname</FormLabel>
               <FormControl>
-                <Input placeholder="Fullname" id="fullname" {...field} />
+                <Input
+                  placeholder="Fullname"
+                  id="fullname"
+                  type="text"
+                  required
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -39,22 +45,32 @@ const FormContact = ({ isLoading }: any) => {
             <FormItem>
               <FormLabel htmlFor="email">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Email" id="email" {...field} />
+                <Input
+                  placeholder="Email"
+                  id="email"
+                  type="email"
+                  required
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
       </div>
-      <div className="mb-3 flex flex-col gap-3">
+      <div className="mb-3 flex flex-col gap-4">
         <Label htmlFor="desc">Description</Label>
         <Textarea
           placeholder="Type your message here."
           id="desc"
+          required
           {...register("desc")}
         />
       </div>
-      <ShimmerButton className="shadow-2xl" type="submit">
+      <ShimmerButton
+        className="shadow-2xl mt-4 xl:px-6 float-end"
+        type="submit"
+      >
         <span className="">{isLoading ? "Loading..." : "Send"}</span>
       </ShimmerButton>
     </>

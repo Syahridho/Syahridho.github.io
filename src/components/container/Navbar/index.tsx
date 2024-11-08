@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { useRouter } from "next/router"; // Import useRouter
+import { useRouter } from "next/router";
 import type { NextPage } from "next";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import FlickeringGrid from "@/components/ui/flickering-grid";
-import { BorderBeam } from "@/components/ui/border-beam";
 import WordPullUp from "@/components/ui/word-pull-up";
 import {
   Dialog,
@@ -54,7 +53,7 @@ const navs: NavItem[] = [
 const Navbar: NextPage = () => {
   const router = useRouter(); // Use Next.js router
   const [toggle, setToggle] = useState<boolean>(false);
-  const [activePath, setActivePath] = useState<string>(router.pathname); // Set initial path based on router.pathname
+  const [activePath, setActivePath] = useState<string>(router.pathname);
   const [loadingImage, setLoadingImage] = useState(true);
   const [modalImageLoading, setModalImageLoading] = useState(true);
 
@@ -125,20 +124,10 @@ const Navbar: NextPage = () => {
                 </DialogHeader>
               </DialogContent>
             </Dialog>
-
-            <BorderBeam
-              size={300}
-              duration={12}
-              delay={9}
-              colorFrom="#bcbcbc"
-              colorTo="#bcbcbc"
-            />
-
             <WordPullUp
               className="text-slate-800 dark:text-white text-base font-base tracking-base"
               words="Syahridho Arjuna Syahputra"
             />
-
             <FlickeringGrid
               className="z-0 absolute inset-0 size-full"
               squareSize={4}
@@ -190,6 +179,11 @@ const Navbar: NextPage = () => {
                 >
                   <Link
                     href={nav.href}
+                    onClick={(e) => {
+                      setToggle(false);
+                      e.preventDefault();
+                      router.push(nav.href);
+                    }}
                     className={`block px-4 py-2 mb-[2px] relative z-10 transition-colors tracking-wide
                       ${
                         activePath === nav.href
@@ -208,50 +202,63 @@ const Navbar: NextPage = () => {
               </h1>
               <ul className="flex justify-center items-center flex-wrap gap-2 py-4">
                 <li>
-                  <Link
-                    href={
-                      "mailto:syahridhosyahputra@gmail.com?Subject=I want help you"
+                  <ShinyButton
+                    className="p-3 rounded-full"
+                    onClick={() =>
+                      window.open(
+                        "mailto:syahridhosyahputra@gmail.com?Subject=I want help you",
+                        "_blank"
+                      )
                     }
-                    target="_blank"
                   >
-                    <ShinyButton className="p-3 rounded-full">
-                      <FaRegEnvelope />
-                    </ShinyButton>
-                  </Link>
+                    <FaRegEnvelope />
+                  </ShinyButton>
                 </li>
                 <li>
-                  <Link
-                    href={"https://www.linkedin.com/in/syahridho/"}
-                    target="_blank"
+                  <ShinyButton
+                    className="p-3 rounded-full"
+                    onClick={() =>
+                      window.open(
+                        "https://www.linkedin.com/in/syahridho/",
+                        "_blank"
+                      )
+                    }
                   >
-                    <ShinyButton className="p-3 rounded-full">
-                      <FaLinkedin />
-                    </ShinyButton>
-                  </Link>
+                    <FaLinkedin />
+                  </ShinyButton>
                 </li>
                 <li>
-                  <Link href={"https://github.com/Syahridho"} target="_blank">
-                    <ShinyButton className="p-3 rounded-full">
-                      <FaGithub />
-                    </ShinyButton>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={"https://www.instagram.com/syahridhoa_/"}
-                    target="_blank"
+                  <ShinyButton
+                    className="p-3 rounded-full"
+                    onClick={() =>
+                      window.open("https://github.com/Syahridho", "_blank")
+                    }
                   >
-                    <ShinyButton className="p-3 rounded-full">
-                      <FaInstagram />
-                    </ShinyButton>
-                  </Link>
+                    <FaGithub />
+                  </ShinyButton>
                 </li>
                 <li>
-                  <Link href={"https://t.me/syahridhoo"} target="_blank">
-                    <ShinyButton className="p-3 rounded-full">
-                      <FaTelegram />
-                    </ShinyButton>
-                  </Link>
+                  <ShinyButton
+                    className="p-3 rounded-full"
+                    onClick={() =>
+                      window.open(
+                        "https://www.instagram.com/syahridhoa_/",
+                        "_blank"
+                      )
+                    }
+                  >
+                    <FaInstagram />
+                  </ShinyButton>
+                </li>
+                <li>
+                  <ShinyButton
+                    className="p-3 rounded-full"
+                    onClick={() =>
+                      window.open("https://t.me/syahridhoo", "_blank")
+                    }
+                  >
+                    <FaTelegram />
+                  </ShinyButton>
                 </li>
               </ul>
             </div>

@@ -11,7 +11,9 @@ const ContactView = () => {
   const methods = useReactHookForm();
   const { toast } = useToast();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [state, submitToFormspree] = useFormSpree("xgegorjg");
+  const [state, submitToFormspree] = useFormSpree(
+    `${process.env.NEXT_PUBLIC_FORMSPREE}`
+  );
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data: any) => {
@@ -21,7 +23,7 @@ const ContactView = () => {
         setIsLoading(false);
         toast({
           title: "Success",
-          description: "Message Send",
+          description: `${data.fullname && data.fullname} You Message Send`,
         });
         methods.reset();
       })
@@ -58,15 +60,6 @@ const ContactView = () => {
           "[mask-image:linear-gradient(to_top_left,white,transparent,transparent)] -z-50"
         )}
       />
-      <button
-        onClick={() =>
-          toast({
-            description: "asd",
-          })
-        }
-      >
-        asdasd
-      </button>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Roboto } from "next/font/google";
 import { useRouter } from "next/router";
+import { Toaster } from "@/components/ui/toaster";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
       ) : (
         <Component {...pageProps} />
       )}
+      <Toaster />
     </div>
   );
 }
