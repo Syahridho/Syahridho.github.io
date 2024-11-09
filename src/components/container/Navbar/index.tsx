@@ -18,13 +18,8 @@ import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import ShinyButton from "@/components/ui/shiny-button";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaInstagram,
-  FaTelegram,
-  FaRegEnvelope,
-} from "react-icons/fa";
+import { socialMedia } from "@/utils/resume";
+import BlurFade from "@/components/ui/blur-fade";
 
 interface NavItem {
   title: string;
@@ -67,9 +62,9 @@ const Navbar: NextPage = () => {
   };
 
   return (
-    <div className="fixed top-0 py-2 left-0 w-full z-40 bg-white shadow-sm md:sticky md:h-screen md:w-96 md:pt-16 dark:bg-gray-900 dark:shadow-gray-700">
+    <div className="fixed top-0  left-0 w-full z-40 bg-white shadow-sm md:sticky md:h-screen md:w-96 md:pt-16 dark:bg-gray-900 dark:shadow-gray-700">
       <div className="container mx-auto px-4 relative">
-        <div className="flex justify-between items-center md:justify-center md:h-auto md:mb-4  rounded-xl relative card-profile md:dark:bg-slate-800 md:before:shadow-rounded-light md:before:dark:!shadow-rounded-dark md:after:!shadow-rounded-light md:after:dark:!shadow-rounded-dark">
+        <div className="flex justify-between items-center md:justify-center md:h-auto md:mb-4 py-2.5 md:py-0 rounded-xl relative card-profile md:dark:bg-slate-800 md:before:shadow-rounded-light md:before:dark:!shadow-rounded-dark md:after:!shadow-rounded-light md:after:dark:!shadow-rounded-dark">
           <h1 className="md:hidden font-medium">Syahridho Arjuna Syahputra</h1>
           <div className="relative py-4 hidden md:flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background shadow-sm">
             <Dialog>
@@ -201,65 +196,21 @@ const Navbar: NextPage = () => {
                 Social Media
               </h1>
               <ul className="flex justify-center items-center flex-wrap gap-2 py-4">
-                <li>
-                  <ShinyButton
-                    className="p-3 rounded-full"
-                    onClick={() =>
-                      window.open(
-                        "mailto:syahridhosyahputra@gmail.com?Subject=I want help you",
-                        "_blank"
-                      )
-                    }
-                  >
-                    <FaRegEnvelope />
-                  </ShinyButton>
-                </li>
-                <li>
-                  <ShinyButton
-                    className="p-3 rounded-full"
-                    onClick={() =>
-                      window.open(
-                        "https://www.linkedin.com/in/syahridho/",
-                        "_blank"
-                      )
-                    }
-                  >
-                    <FaLinkedin />
-                  </ShinyButton>
-                </li>
-                <li>
-                  <ShinyButton
-                    className="p-3 rounded-full"
-                    onClick={() =>
-                      window.open("https://github.com/Syahridho", "_blank")
-                    }
-                  >
-                    <FaGithub />
-                  </ShinyButton>
-                </li>
-                <li>
-                  <ShinyButton
-                    className="p-3 rounded-full"
-                    onClick={() =>
-                      window.open(
-                        "https://www.instagram.com/syahridhoa_/",
-                        "_blank"
-                      )
-                    }
-                  >
-                    <FaInstagram />
-                  </ShinyButton>
-                </li>
-                <li>
-                  <ShinyButton
-                    className="p-3 rounded-full"
-                    onClick={() =>
-                      window.open("https://t.me/syahridhoo", "_blank")
-                    }
-                  >
-                    <FaTelegram />
-                  </ShinyButton>
-                </li>
+                {socialMedia.map((media: any, index: number) => {
+                  const Icon = media.icon;
+                  return (
+                    <BlurFade delay={0.25} key={index}>
+                      <li>
+                        <ShinyButton
+                          className="p-3 rounded-full"
+                          onClick={() => window.open(`${media.href}`, "_blank")}
+                        >
+                          <Icon />
+                        </ShinyButton>
+                      </li>
+                    </BlurFade>
+                  );
+                })}
               </ul>
             </div>
           </div>

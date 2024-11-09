@@ -21,6 +21,42 @@ import {
   SiPython,
 } from "react-icons/si";
 
+import {
+  FaLinkedin,
+  FaGithub,
+  FaInstagram,
+  FaTelegram,
+  FaRegEnvelope,
+} from "react-icons/fa";
+
+export const socialMedia: any = [
+  {
+    name: "Email",
+    href: "mailto:syahridhosyahputra@gmail.com",
+    icon: FaRegEnvelope,
+  },
+  {
+    name: "Linkedin",
+    href: "https://www.linkedin.com/in/syahridho/",
+    icon: FaLinkedin,
+  },
+  {
+    name: "Github",
+    href: "https://github.com/Syahridho",
+    icon: FaGithub,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/syahridhoa_/",
+    icon: FaInstagram,
+  },
+  {
+    name: "Telegram",
+    href: "https://t.me/syahridhoo",
+    icon: FaTelegram,
+  },
+];
+
 export const home = {
   name: "Syahridho Arjuna Syahputra",
   location: "Pekanbaru, Riau, Indonesia",
