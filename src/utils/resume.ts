@@ -132,3 +132,236 @@ export const home = {
     },
   ],
 };
+
+export const projects = [
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+];
+
+const url: string =
+  "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcertificates%2Ffrondend%2Fdicoding-belajar-membuat-front-end-web-untuk-pemula.webp?alt=media&token=4d1827af-69d3-4352-b8d7-e28a425b72bf";
+
+export const certificates = {
+  main: [
+    {
+      url: url,
+      role: "fronend",
+    },
+    {
+      url: url,
+      role: "backend",
+    },
+    {
+      url: url,
+      role: "devops",
+    },
+    {
+      url: url,
+      role: "ui/ux",
+    },
+    {
+      url: url,
+      role: "ai",
+    },
+    {
+      url: url,
+      role: "flutter",
+    },
+  ],
+  all: [
+    {
+      url: url,
+      role: "frondend",
+    },
+    {
+      url: url,
+      role: "backend",
+    },
+    {
+      url: url,
+      role: "backend",
+    },
+    {
+      url: url,
+      role: "devops",
+    },
+    {
+      url: url,
+      role: "devops",
+    },
+    {
+      url: url,
+      role: "devops",
+    },
+    {
+      url: url,
+      role: "mobile",
+    },
+    {
+      url: url,
+      role: "mobile",
+    },
+    {
+      url: url,
+      role: "mobile",
+    },
+    {
+      url: url,
+      role: "mobile",
+    },
+    {
+      url: url,
+      role: "mechine",
+    },
+    {
+      url: url,
+      role: "mechine",
+    },
+    {
+      url: url,
+      role: "mechine",
+    },
+    {
+      url: url,
+      role: "mechine",
+    },
+    {
+      url: url,
+      role: "mechine",
+    },
+    {
+      url: url,
+      role: "other",
+    },
+    {
+      url: url,
+      role: "other",
+    },
+    {
+      url: url,
+      role: "other",
+    },
+    {
+      url: url,
+      role: "other",
+    },
+    {
+      url: url,
+      role: "other",
+    },
+    {
+      url: url,
+      role: "other",
+    },
+    {
+      url: url,
+      role: "other",
+    },
+  ],
+};

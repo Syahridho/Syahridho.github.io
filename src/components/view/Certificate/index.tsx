@@ -19,30 +19,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import BlurFade from "@/components/ui/blur-fade";
-
-const url: string =
-  "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcertificates%2Ffrondend%2Fdicoding-belajar-membuat-front-end-web-untuk-pemula.webp?alt=media&token=4d1827af-69d3-4352-b8d7-e28a425b72bf";
-
-const datas = [
-  {
-    url: url,
-  },
-  {
-    url: url,
-  },
-  {
-    url: url,
-  },
-  {
-    url: url,
-  },
-  {
-    url: url,
-  },
-  {
-    url: url,
-  },
-];
+import { certificates } from "@/utils/resume";
 
 const CertificateView = () => {
   const [loadingImage, setLoadingImage] = useState(true);
@@ -56,8 +33,8 @@ const CertificateView = () => {
       />
       <h1 className="mb-8">I have certificates from several bootcamps.</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {datas ? (
-          datas.map((data, index: number) => (
+        {certificates ? (
+          certificates.main.map((certificate: any, index: number) => (
             <BlurFade key={index} delay={0.13 * index}>
               <Dialog>
                 <DialogTrigger asChild>
@@ -68,7 +45,7 @@ const CertificateView = () => {
                           <Skeleton className="absolute inset-0 w-full h-full" />
                         )}
                         <Image
-                          src={data.url}
+                          src={certificate.url}
                           loading="lazy"
                           width={350}
                           height={200}
@@ -90,7 +67,7 @@ const CertificateView = () => {
                         <Skeleton className="absolute inset-0 w-full aspect-[1/1]" />
                       )}
                       <Image
-                        src={data.url}
+                        src={certificate.url}
                         width={700}
                         height={700}
                         alt="certificate"
