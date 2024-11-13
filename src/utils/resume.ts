@@ -242,6 +242,654 @@ export const projects = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
   },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
+  {
+    title: "Chat Collect",
+    href: "/project/asd",
+    dates: "Jan 2024 - Feb 2024",
+    active: true,
+    description:
+      "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+    technologies: [
+      "Next.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "TailwindCSS",
+      "Stripe",
+      "Shadcn UI",
+      "Magic UI",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "/project/asd",
+        icon: "",
+      },
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+  },
 ];
 
 const url: string =
