@@ -1,7 +1,7 @@
 import IconTech from "@/components/ui/IconTech";
 import Marquee from "@/components/ui/marquee";
 
-export function MarqueeDemo({ data }: any) {
+export function MarqueeTech({ data }: any) {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
       <Marquee pauseOnHover className="[--duration:30s] md:[--duration:40s]">

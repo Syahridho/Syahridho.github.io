@@ -7,10 +7,11 @@ import DotPattern from "@/components/ui/dot-pattern";
 import GridPattern from "@/components/ui/grid-pattern";
 import BlurIn from "@/components/ui/blur-in";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import { MarqueeDemo } from "@/components/container/Marquee";
+import { MarqueeTech } from "@/components/container/Marquee";
 import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { IoSchoolOutline } from "react-icons/io5";
 import { DiGithubBadge } from "react-icons/di";
+import BlurFade from "@/components/ui/blur-fade";
 
 const HomeView = () => {
   return (
@@ -44,7 +45,7 @@ const HomeView = () => {
         subTitle={"My Coding Skills"}
         icon={LiaLaptopCodeSolid}
       >
-        <MarqueeDemo data={home.tech} />
+        <MarqueeTech data={home.tech} />
       </HeaderHome>
 
       <HeaderHome
@@ -52,17 +53,19 @@ const HomeView = () => {
         subTitle={"My Contribution in github"}
         icon={DiGithubBadge}
       >
-        <div className="w-full block my-6">
-          <GitHubCalendar
-            username="syahridho"
-            colorScheme="light"
-            blockSize={10.5}
-            style={{
-              overflow: "hidden",
-              maxWidth: "100%",
-            }}
-          />
-        </div>
+        <BlurFade inView>
+          <div className="w-full block my-6">
+            <GitHubCalendar
+              username="syahridho"
+              colorScheme="light"
+              blockSize={10.5}
+              style={{
+                overflow: "hidden",
+                maxWidth: "100%",
+              }}
+            />
+          </div>
+        </BlurFade>
       </HeaderHome>
 
       <HeaderHome

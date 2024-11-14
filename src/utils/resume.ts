@@ -66,13 +66,13 @@ export const home = {
   cv: "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcv%2FCVSyahridhoArjunaSyahputra.pdf?alt=media&token=ae16c803-5722-4478-a3b4-a1d933c87cdb",
   tech: {
     iconsUp: [
-      { icon: SiHtml5, title: "HTML5", color: "#E34F26" },
-      { icon: SiCss3, title: "CSS3", color: "#1572B6" },
+      { icon: SiHtml5, title: "HTML 5", color: "#E34F26" },
+      { icon: SiCss3, title: "CSS 3", color: "#1572B6" },
       { icon: SiJavascript, title: "JavaScript", color: "#F7DF1E" },
       { icon: SiTailwindcss, title: "Tailwind CSS", color: "#06B6D4" },
       { icon: SiShadcnui, title: "Shadcn UI", color: "#000000" },
       { icon: SiTypescript, title: "TypeScript", color: "#3178C6" },
-      { icon: SiReact, title: "React", color: "#61DAFB" },
+      { icon: SiReact, title: "React.Js", color: "#61DAFB" },
       { icon: SiNextdotjs, title: "Next.js", color: "#000000" },
       { icon: SiNodedotjs, title: "Node.js", color: "#339933" },
       { icon: SiPython, title: "Python", color: "#4B8BBE" },
@@ -891,6 +891,39 @@ export const projects = [
       "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
   },
 ];
+
+export const detailProject: any = {
+  title: "Chat Collect",
+  href: "/project/asd",
+  dates: "Jan 2024 - Feb 2024",
+  active: true,
+  description:
+    "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+  technologies: [
+    "Next.js",
+    "Typescript",
+    "PostgreSQL",
+    "Prisma",
+    "TailwindCSS",
+    "Stripe",
+    "Shadcn UI",
+    "Magic UI",
+  ],
+  links: [
+    {
+      type: "Demo",
+      href: "https://www.google.com",
+      icon: "",
+    },
+    {
+      type: "Github",
+      href: "https://www.github.com",
+      icon: "",
+    },
+  ],
+  image:
+    "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
+};
 
 const url: string =
   "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcertificates%2Ffrondend%2Fdicoding-belajar-membuat-front-end-web-untuk-pemula.webp?alt=media&token=4d1827af-69d3-4352-b8d7-e28a425b72bf";
