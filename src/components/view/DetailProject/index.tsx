@@ -1,3 +1,4 @@
+import { detailProject } from "@/utils/resume";
 import { Badge } from "@/components/ui/badge";
 import GridPattern from "@/components/ui/grid-pattern";
 import { RainbowButton } from "@/components/ui/rainbow-button";
@@ -7,8 +8,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
-import { detailProject } from "@/utils/resume";
 import Footer from "@/components/container/Footer";
+import CopyCode from "@/components/container/CopyCode";
+
+const tutors = [
+  {
+    title: "Clone Github",
+    code: "git clone https://syahridho.github.io",
+  },
+  {
+    title: "Masuk derctory",
+    code: "code .",
+  },
+  {
+    title: "run project",
+    code: "npm run dev",
+  },
+  {
+    title: "Open http://localhost:3000 with your browser to see the result.",
+  },
+];
 
 const DetailProjectView = () => {
   return (
@@ -33,10 +52,50 @@ const DetailProjectView = () => {
       </Link>
 
       <div className="py-6">
-        <h1 className="text-2xl font-medium tracking-wide">
-          {detailProject.title}
-        </h1>
-        <p className="mb-6 text-slate-400 text-sm">{detailProject.dates}</p>
+        <div
+          className={
+            "flex flex-col mb-6 md:flex-row md:justify-between md:mb-0"
+          }
+        >
+          <div className={"mb-6"}>
+            <h1 className="text-2xl font-medium tracking-wide">
+              {detailProject.title}
+            </h1>
+            <p className="text-slate-400 text-sm">{detailProject.dates}</p>
+          </div>
+          <div className="flex gap-3">
+            {detailProject.links.map((link: any, index: number) => {
+              if (link.type === "Demo") {
+                return (
+                  <ShinyButton
+                    key={index}
+                    onClick={() => {
+                      window.open(link.href, "_blank", "noopener,noreferrer");
+                    }}
+                    className="pt-2.5 h-fit"
+                  >
+                    Live Demo
+                  </ShinyButton>
+                );
+              } else if (link.type === "Github") {
+                return (
+                  <RainbowButton
+                    key={index}
+                    className="rounded-lg py-0"
+                    onClick={() => {
+                      window.open(link.href, "_blank", "noopener,noreferrer");
+                    }}
+                  >
+                    <SiGithub className="mr-2 w-4 h-4" />
+                    Github
+                  </RainbowButton>
+                );
+              } else {
+                return null;
+              }
+            })}
+          </div>
+        </div>
         <p className="mb-4">{detailProject.description}</p>
         <Image
           src={detailProject.image}
@@ -48,44 +107,28 @@ const DetailProjectView = () => {
         <h1 className="text-xl font-semibold mb-4">Technologies :</h1>
         <div className="flex gap-2 flex-wrap mb-12">
           {detailProject.technologies.map((tech: string, index: number) => (
-            <Badge variant={"default"} key={index}>
+            <Badge variant={"outline"} key={index}>
               {tech}
             </Badge>
           ))}
         </div>
-        <div className="flex gap-3 justify-end">
-          {detailProject.links.map((link: any, index: number) => {
-            if (link.type === "Demo") {
-              return (
-                <ShinyButton
-                  key={index}
-                  onClick={() => {
-                    window.open(link.href, "_blank", "noopener,noreferrer");
-                  }}
-                  className="pt-2.5"
-                >
-                  Live Demo
-                </ShinyButton>
-              );
-            } else if (link.type === "Github") {
-              return (
-                <RainbowButton
-                  key={index}
-                  className="rounded-lg py-0"
-                  onClick={() => {
-                    window.open(link.href, "_blank", "noopener,noreferrer");
-                  }}
-                >
-                  <SiGithub className="mr-2 w-4 h-4" />
-                  Github
-                </RainbowButton>
-              );
-            } else {
-              return null;
-            }
-          })}
-        </div>
       </div>
+
+      <h1 className="text-xl font-medium mb-6">How to start my code</h1>
+      <div className="flex flex-col gap-10">
+        {tutors.map((tutor, index) =>
+          tutor.code ? (
+            <CopyCode
+              key={index}
+              title={`${index + 1}. ${tutor.title}`}
+              code={tutor.code}
+            />
+          ) : (
+            <h1 key={index}>{tutor.title}</h1>
+          )
+        )}
+      </div>
+
       <Footer />
     </div>
   );
