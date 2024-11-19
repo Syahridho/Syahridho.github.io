@@ -11,24 +11,6 @@ import { SiGithub } from "react-icons/si";
 import Footer from "@/components/container/Footer";
 import CopyCode from "@/components/container/CopyCode";
 
-const tutors = [
-  {
-    title: "Clone Github",
-    code: "git clone https://syahridho.github.io",
-  },
-  {
-    title: "Masuk derctory",
-    code: "code .",
-  },
-  {
-    title: "run project",
-    code: "npm run dev",
-  },
-  {
-    title: "Open http://localhost:3000 with your browser to see the result.",
-  },
-];
-
 const DetailProjectView = () => {
   return (
     <div className="max-w-[1000px] mx-auto p-8">
@@ -114,20 +96,24 @@ const DetailProjectView = () => {
         </div>
       </div>
 
-      <h1 className="text-xl font-medium mb-6">How to start my code</h1>
-      <div className="flex flex-col gap-10">
-        {tutors.map((tutor, index) =>
-          tutor.code ? (
-            <CopyCode
-              key={index}
-              title={`${index + 1}. ${tutor.title}`}
-              code={tutor.code}
-            />
-          ) : (
-            <h1 key={index}>{tutor.title}</h1>
-          )
-        )}
-      </div>
+      {detailProject.github && (
+        <>
+          <h1 className="text-xl font-medium mb-6">How to start my code</h1>
+          <div className="flex flex-col gap-10">
+            {detailProject.github.map((tutor: any, index: number) =>
+              tutor.code ? (
+                <CopyCode
+                  key={index}
+                  title={`${index + 1}. ${tutor.title}`}
+                  code={tutor.code}
+                />
+              ) : (
+                <h1 key={index}>{tutor.title}</h1>
+              )
+            )}
+          </div>
+        </>
+      )}
 
       <Footer />
     </div>

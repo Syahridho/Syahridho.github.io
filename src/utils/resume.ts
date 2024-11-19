@@ -921,6 +921,23 @@ export const detailProject: any = {
       icon: "",
     },
   ],
+  github: [
+    {
+      title: "Clone Github",
+      code: "git clone https://syahridho.github.io",
+    },
+    {
+      title: "Masuk derctory",
+      code: "code .",
+    },
+    {
+      title: "run project",
+      code: "npm run dev",
+    },
+    {
+      title: "Open http://localhost:3000 with your browser to see the result.",
+    },
+  ],
   image:
     "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fprojects%2Ffilm.webp?alt=media&token=d7b6469c-a5de-48ea-a220-8013e8c5df25",
 };
