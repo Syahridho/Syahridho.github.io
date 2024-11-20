@@ -12,10 +12,37 @@ import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { IoSchoolOutline } from "react-icons/io5";
 import { DiGithubBadge } from "react-icons/di";
 import BlurFade from "@/components/ui/blur-fade";
+import instance from "@/lib/axios/instance";
+import { QueryClient, dehydrate, useQuery } from "@tanstack/react-query";
+
+const fetchData = async () => {
+  const { data } = await instance.get("/api/home");
+  return data;
+};
+
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({ queryKey: ["home"], queryFn: fetchData });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}
 
 const HomeView = () => {
+  const { data } = useQuery({
+    queryKey: ["home"],
+    queryFn: fetchData,
+  });
+
+  console.log(data);
+
   return (
     <>
+      <h1>{data?.data[0].name || "data tidak ada"}</h1>
       <div className="flex flex-col md:justify-between md:items-center md:flex-row">
         <BlurIn
           word={`Hi, I'm ${home.name}`}

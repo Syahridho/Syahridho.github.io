@@ -1,10 +1,12 @@
 import ContainerLayout from "@/components/layout/ContainerLayout";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import _404 from "@/pages/404";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Roboto } from "next/font/google";
 import { useRouter } from "next/router";
 import { Toaster } from "@/components/ui/toaster";
+import { useState } from "react";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -24,6 +26,7 @@ const certificatePattern = /^\/certificate\/all$/;
 
 export default function App({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
+  const [queryClient] = useState(() => new QueryClient());
 
   const isValidPath =
     validPaths.has(pathname) ||
@@ -44,9 +47,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={roboto.className}>
       {needsContainer ? (
-        <ContainerLayout>
-          <Component {...pageProps} />
-        </ContainerLayout>
+        <QueryClientProvider client={queryClient}>
+          <ContainerLayout>
+            <Component {...pageProps} />
+          </ContainerLayout>
+        </QueryClientProvider>
       ) : (
         <Component {...pageProps} />
       )}
