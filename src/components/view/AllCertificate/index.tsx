@@ -19,12 +19,39 @@ import BlurIn from "@/components/ui/blur-in";
 import { FaArrowLeft } from "react-icons/fa6";
 import Link from "next/link";
 import BlurFade from "@/components/ui/blur-fade";
-import { certificates } from "@/utils/resume";
+// import { certificates } from "@/utils/resume";
+import instance from "@/lib/axios/instance";
+import { QueryClient, useQuery } from "@tanstack/react-query";
+
+const fetch = async () => {
+  const { data } = await instance.get("/api/allCertificates");
+  return data;
+};
+
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["allCertificates"],
+    queryFn: fetch,
+  });
+
+  return {
+    props: {
+      dehydratedState: queryClient.getQueryData(["allCertificates"]),
+    },
+  };
+}
 
 const AllCertificate = () => {
-  const [select, setSelect] = useState("Frond End Developer");
+  const [select, setSelect] = useState("frondEnd");
 
-  console.log(select);
+  const { data, isLoading } = useQuery({
+    queryKey: ["allCertificates"],
+    queryFn: fetch,
+  });
+  console.log(data);
+
   return (
     <div className="max-w-[1000px] mx-auto xl:my-6 p-8">
       <Link className="flex items-center text-slate-600" href={"/certificate"}>
@@ -39,17 +66,17 @@ const AllCertificate = () => {
         className="text-4xl font-bold text-black dark:text-white "
       />
       <h1 className="mb-4">I have certificates from several bootcamps.</h1>
-      <div className="my-4">
+      <div className="mt-4 mb-8">
         <Select onValueChange={(e) => setSelect(e)}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder={"FrondEnd Developer"} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="frondend" defaultChecked>
+            <SelectItem value="frondEnd" defaultChecked>
               FrondEnd Developer
             </SelectItem>
-            <SelectItem value="backend">BackEnd Developer</SelectItem>
-            <SelectItem value="devops">DevOps Developer</SelectItem>
+            <SelectItem value="backEnd">BackEnd Developer</SelectItem>
+            <SelectItem value="devOps">DevOps Developer</SelectItem>
             <SelectItem value="mechine">Mechine Learning</SelectItem>
             <SelectItem value="mobile">Mobile App Developer</SelectItem>
             <SelectItem value="other">other</SelectItem>
@@ -57,11 +84,10 @@ const AllCertificate = () => {
         </Select>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-x-4 gap-y-6">
-        {certificates.all
-          .filter((certificate: any) => certificate.role === select)
-          .map((certificate, index) => (
+        {!isLoading ? (
+          data?.data?.[select].map((certificate: any, index: number) => (
             <BlurFade key={index} delay={0.12 * index}>
-              <Dialog key={index}>
+              <Dialog>
                 <DialogTrigger asChild>
                   <Button
                     variant="outline"
@@ -69,7 +95,7 @@ const AllCertificate = () => {
                   >
                     <Card>
                       <Image
-                        src={certificate.url}
+                        src={certificate.image}
                         width={350}
                         height={200}
                         alt="certificate"
@@ -81,9 +107,9 @@ const AllCertificate = () => {
                 <DialogContent>
                   <DialogHeader>
                     <Image
+                      src={certificate.image}
                       width={700}
                       height={700}
-                      src={certificate.url}
                       alt="certificate"
                       className="w-full object-contain"
                     />
@@ -91,7 +117,10 @@ const AllCertificate = () => {
                 </DialogContent>
               </Dialog>
             </BlurFade>
-          ))}
+          ))
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     </div>
   );

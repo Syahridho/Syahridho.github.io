@@ -1,5 +1,3 @@
-"use client";
-
 import BlurIn from "@/components/ui/blur-in";
 import { Card } from "@/components/ui/card";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
@@ -19,11 +17,35 @@ import Link from "next/link";
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import BlurFade from "@/components/ui/blur-fade";
-import { certificates } from "@/utils/resume";
+import { QueryClient, dehydrate, useQuery } from "@tanstack/react-query";
+import instance from "@/lib/axios/instance";
+
+const fetchData = async () => {
+  const { data } = await instance.get("/api/certificate");
+  return data;
+};
+
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({ queryKey: ["home"], queryFn: fetchData });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}
 
 const CertificateView = () => {
   const [loadingImage, setLoadingImage] = useState(true);
   const [modalImageLoading, setModalImageLoading] = useState(true);
+
+  const { data } = useQuery({
+    queryKey: ["home"],
+    queryFn: fetchData,
+  });
+
   return (
     <>
       <BlurIn
@@ -33,8 +55,8 @@ const CertificateView = () => {
       />
       <h1 className="mb-8">I have certificates from several bootcamps.</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {certificates ? (
-          certificates.main.map((certificate: any, index: number) => (
+        {data ? (
+          data?.data.map((certificate: any, index: number) => (
             <BlurFade key={index} delay={0.13 * index}>
               <Dialog>
                 <DialogTrigger asChild>
@@ -45,11 +67,11 @@ const CertificateView = () => {
                           <Skeleton className="absolute inset-0 w-full h-full" />
                         )}
                         <Image
-                          src={certificate.url}
+                          src={certificate.image}
                           loading="lazy"
                           width={350}
                           height={200}
-                          alt="certificate"
+                          alt={certificate.name}
                           className={cn(
                             "object-cover w-full h-full transition-opacity duration-300",
                             loadingImage ? "opacity-0" : "opacity-100"
@@ -67,10 +89,10 @@ const CertificateView = () => {
                         <Skeleton className="absolute inset-0 w-full aspect-[1/1]" />
                       )}
                       <Image
-                        src={certificate.url}
+                        src={certificate.image}
                         width={700}
                         height={700}
-                        alt="certificate"
+                        alt={certificate.name}
                         className={cn(
                           "w-full object-contain",
                           modalImageLoading ? "opacity-0" : "opacity-100"
@@ -84,7 +106,9 @@ const CertificateView = () => {
             </BlurFade>
           ))
         ) : (
-          <h1>loading</h1>
+          <div>
+            <Skeleton className="w-[250px] h-[250px]" />
+          </div>
         )}
       </div>
       <div className="z-10 flex my-8 items-center justify-center">

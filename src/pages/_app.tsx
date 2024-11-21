@@ -45,17 +45,17 @@ export default function App({ Component, pageProps }: AppProps) {
     pathname !== "/project/[id]" && pathname !== "/certificate/all";
 
   return (
-    <div className={roboto.className}>
-      {needsContainer ? (
-        <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <div className={roboto.className}>
+        {needsContainer ? (
           <ContainerLayout>
             <Component {...pageProps} />
           </ContainerLayout>
-        </QueryClientProvider>
-      ) : (
-        <Component {...pageProps} />
-      )}
-      <Toaster />
-    </div>
+        ) : (
+          <Component {...pageProps} />
+        )}
+        <Toaster />
+      </div>
+    </QueryClientProvider>
   );
 }
