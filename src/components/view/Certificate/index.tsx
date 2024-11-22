@@ -3,7 +3,6 @@ import { Card } from "@/components/ui/card";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
-
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,7 +10,6 @@ import {
   DialogHeader,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -28,7 +26,10 @@ const fetchData = async () => {
 export async function getServerSideProps() {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery({ queryKey: ["home"], queryFn: fetchData });
+  await queryClient.prefetchQuery({
+    queryKey: ["certificate"],
+    queryFn: fetchData,
+  });
 
   return {
     props: {
@@ -38,13 +39,15 @@ export async function getServerSideProps() {
 }
 
 const CertificateView = () => {
-  const [loadingImage, setLoadingImage] = useState(true);
+  // const [loadingImage, setLoadingImage] = useState(true);
   const [modalImageLoading, setModalImageLoading] = useState(true);
 
   const { data } = useQuery({
-    queryKey: ["home"],
+    queryKey: ["certificate"],
     queryFn: fetchData,
   });
+
+  console.log(data);
 
   return (
     <>
@@ -56,29 +59,21 @@ const CertificateView = () => {
       <h1 className="mb-8">I have certificates from several bootcamps.</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {data ? (
-          data?.data.map((certificate: any, index: number) => (
+          data.data.map((certificate: any, index: number) => (
             <BlurFade key={index} delay={0.13 * index}>
               <Dialog>
                 <DialogTrigger asChild>
                   <Button variant="outline" className="p-0 h-auto w-auto">
-                    <Card>
-                      <div className="aspect-[16/11.5] relative">
-                        {loadingImage && (
-                          <Skeleton className="absolute inset-0 w-full h-full" />
-                        )}
-                        <Image
-                          src={certificate.image}
-                          loading="lazy"
-                          width={350}
-                          height={200}
-                          alt={certificate.name}
-                          className={cn(
-                            "object-cover w-full h-full transition-opacity duration-300",
-                            loadingImage ? "opacity-0" : "opacity-100"
-                          )}
-                          onLoad={() => setLoadingImage(false)}
-                        />
-                      </div>
+                    <Card className="hover:shadow-xl">
+                      <Image
+                        src={certificate.image}
+                        width={350}
+                        height={200}
+                        alt={certificate.name}
+                        className={
+                          "object-cover w-full h-full transition-opacity duration-300"
+                        }
+                      />
                     </Card>
                   </Button>
                 </DialogTrigger>
@@ -106,9 +101,14 @@ const CertificateView = () => {
             </BlurFade>
           ))
         ) : (
-          <div>
-            <Skeleton className="w-[250px] h-[250px]" />
-          </div>
+          <>
+            <Skeleton className="w-[250px] h-[175px]" />
+            <Skeleton className="w-[250px] h-[175px]" />
+            <Skeleton className="w-[250px] h-[175px]" />
+            <Skeleton className="w-[250px] h-[175px]" />
+            <Skeleton className="w-[250px] h-[175px]" />
+            <Skeleton className="w-[250px] h-[175px]" />
+          </>
         )}
       </div>
       <div className="z-10 flex my-8 items-center justify-center">

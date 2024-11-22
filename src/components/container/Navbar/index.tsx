@@ -80,7 +80,7 @@ const Navbar: NextPage = () => {
                       )}
                       <Image
                         src={
-                          "https://media.licdn.com/dms/image/v2/D5603AQGWo4CLtxQywA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728105177466?e=1735776000&v=beta&t=_YPuOCPFvap6RxXjkMpiCP0mYiXFX6V2n0qkM9UHbMg"
+                          "https://syahridho.github.io/assets/profile-Sg5TBd7P.jpg"
                         }
                         loading="lazy"
                         width={100}
@@ -179,7 +179,7 @@ const Navbar: NextPage = () => {
                       e.preventDefault();
                       router.push(nav.href);
                     }}
-                    className={`block px-4 py-2 mb-[2px] relative z-10 transition-colors tracking-wide
+                    className={`block font-semibold px-4 py-2 mb-[2px] relative z-10 transition-colors tracking-wide
                       ${
                         activePath === nav.href
                           ? ""

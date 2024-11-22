@@ -42,7 +42,6 @@ const HomeView = () => {
 
   return (
     <>
-      <h1>{data?.data[0].name || "data tidak ada"}</h1>
       <div className="flex flex-col md:justify-between md:items-center md:flex-row">
         <BlurIn
           word={`Hi, I'm ${home.name}`}
