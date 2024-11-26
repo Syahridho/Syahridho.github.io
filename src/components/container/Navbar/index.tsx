@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useRouter } from "next/router";
@@ -18,8 +19,37 @@ import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import ShinyButton from "@/components/ui/shiny-button";
-import { socialMedia } from "@/utils/resume";
 import BlurFade from "@/components/ui/blur-fade";
+import instance from "@/lib/axios/instance";
+import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import * as FaIcons from "react-icons/fa";
+
+interface SocialMedia {
+  id: string;
+  href: string;
+  icons: React.ElementType;
+  name: string;
+}
+
+const fetchData = async () => {
+  const { data } = await instance.get("/api/socialmedia");
+  return data.data;
+};
+
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["sosialmedia"],
+    queryFn: fetchData,
+  });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}
 
 interface NavItem {
   title: string;
@@ -46,16 +76,22 @@ const navs: NavItem[] = [
 ];
 
 const Navbar: NextPage = () => {
-  const router = useRouter(); // Use Next.js router
+  const router = useRouter();
   const [toggle, setToggle] = useState<boolean>(false);
   const [activePath, setActivePath] = useState<string>(router.pathname);
   const [loadingImage, setLoadingImage] = useState(true);
   const [modalImageLoading, setModalImageLoading] = useState(true);
 
+  const { data } = useQuery<SocialMedia[]>({
+    queryKey: ["certificate"],
+    queryFn: fetchData,
+  });
+
+  console.log(data);
+
   useEffect(() => {
-    // Update activePath when the route changes
     setActivePath(router.pathname);
-  }, [router.pathname]); // Listen to route changes
+  }, [router.pathname]);
 
   const handleHamburger = () => {
     setToggle(!toggle);
@@ -196,21 +232,25 @@ const Navbar: NextPage = () => {
                 Social Media
               </h1>
               <ul className="flex justify-center items-center flex-wrap gap-2 py-4">
-                {socialMedia.map((media: any, index: number) => {
-                  const Icon = media.icon;
-                  return (
-                    <BlurFade delay={0.25} key={index}>
-                      <li>
-                        <ShinyButton
-                          className="p-3 rounded-full"
-                          onClick={() => window.open(`${media.href}`, "_blank")}
-                        >
-                          <Icon />
-                        </ShinyButton>
-                      </li>
-                    </BlurFade>
-                  );
-                })}
+                {data &&
+                  data.map((media: any) => {
+                    const Icon = (FaIcons as any)[media.icons];
+                    return (
+                      <BlurFade delay={0.25} key={media.id}>
+                        <li>
+                          <ShinyButton
+                            className="p-3 rounded-full"
+                            onClick={() =>
+                              window.open(`${media.href}`, "_blank")
+                            }
+                            aria-label={`Open ${media.name}`}
+                          >
+                            <Icon />
+                          </ShinyButton>
+                        </li>
+                      </BlurFade>
+                    );
+                  })}
               </ul>
             </div>
           </div>
