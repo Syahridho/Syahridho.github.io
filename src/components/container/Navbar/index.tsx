@@ -87,8 +87,6 @@ const Navbar: NextPage = () => {
     queryFn: fetchData,
   });
 
-  console.log(data);
-
   useEffect(() => {
     setActivePath(router.pathname);
   }, [router.pathname]);

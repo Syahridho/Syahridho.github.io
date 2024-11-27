@@ -17,7 +17,7 @@ import { QueryClient, dehydrate, useQuery } from "@tanstack/react-query";
 
 const fetchData = async () => {
   const { data } = await instance.get("/api/home");
-  return data;
+  return data.data;
 };
 
 export async function getServerSideProps() {
@@ -100,9 +100,15 @@ const HomeView = () => {
         icon={IoSchoolOutline}
       >
         <div className="divide-y divide-dashed my-4">
-          {home.career.map((item: any, index: any) => (
-            <CareerCard key={index} career={item} />
-          ))}
+          {data ? (
+            [...data?.career]
+              .reverse()
+              .map((item: any, index: any) => (
+                <CareerCard key={index} career={item} />
+              ))
+          ) : (
+            <h1>Loading</h1>
+          )}
         </div>
       </HeaderHome>
 
