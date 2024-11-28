@@ -20,7 +20,7 @@ import instance from "@/lib/axios/instance";
 
 const fetchData = async () => {
   const { data } = await instance.get("/api/certificate");
-  return data;
+  return data.data;
 };
 
 export async function getServerSideProps() {
@@ -59,7 +59,7 @@ const CertificateView = () => {
       <h1 className="mb-8">I have certificates from several bootcamps.</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {data ? (
-          data.data.map((certificate: any, index: number) => (
+          data?.map((certificate: any, index: number) => (
             <BlurFade key={index} delay={0.13 * index}>
               <Dialog>
                 <DialogTrigger asChild>

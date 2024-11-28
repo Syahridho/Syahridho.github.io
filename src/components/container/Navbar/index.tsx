@@ -83,7 +83,7 @@ const Navbar: NextPage = () => {
   const [modalImageLoading, setModalImageLoading] = useState(true);
 
   const { data } = useQuery<SocialMedia[]>({
-    queryKey: ["certificate"],
+    queryKey: ["sosialmedia"],
     queryFn: fetchData,
   });
 

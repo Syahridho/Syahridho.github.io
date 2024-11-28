@@ -38,8 +38,6 @@ const HomeView = () => {
     queryFn: fetchData,
   });
 
-  console.log(data);
-
   return (
     <>
       <div className="flex flex-col md:justify-between md:items-center md:flex-row">

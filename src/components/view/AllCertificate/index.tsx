@@ -50,7 +50,6 @@ const AllCertificate = () => {
     queryKey: ["allCertificates"],
     queryFn: fetch,
   });
-  console.log(data);
 
   return (
     <div className="max-w-[1000px] mx-auto xl:my-6 p-8">

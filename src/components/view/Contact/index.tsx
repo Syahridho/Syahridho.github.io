@@ -28,10 +28,9 @@ const ContactView = () => {
         methods.reset();
       })
       .catch((error) => {
-        console.log(error);
         toast({
           title: "Failed",
-          description: "Error",
+          description: error,
         });
         setIsLoading(false);
       });
