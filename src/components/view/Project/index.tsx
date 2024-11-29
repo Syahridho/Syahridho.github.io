@@ -1,7 +1,7 @@
-import { projects } from "../../../utils/resume";
-import ProjectCard from "@/components/container/ProjectCard";
-import BlurFade from "@/components/ui/blur-fade";
-import BlurIn from "@/components/ui/blur-in";
+import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import instance from "@/lib/axios/instance";
 import {
   Pagination,
   PaginationContent,
@@ -10,24 +10,56 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { useState } from "react";
+
+const BlurIn = dynamic(() => import("@/components/ui/blur-in"), { ssr: false });
+const BlurFade = dynamic(() => import("@/components/ui/blur-fade"), {
+  ssr: false,
+});
+const ProjectCard = dynamic(
+  () => import("@/components/container/ProjectCard"),
+  { ssr: false }
+);
 
 const BLUR_FADE_DELAY = 0.04;
 
-const ProjectView = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [projectsPerPage] = useState(6); // Set the number of projects to display per page
+const fetchData = async () => {
+  const { data } = await instance.get("/api/projects");
+  return data.data;
+};
 
-  // Get the projects to display based on the current page
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["projects"],
+    queryFn: fetchData,
+  });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}
+
+const ProjectView = () => {
+  const { data } = useQuery({
+    queryKey: ["projects"],
+    queryFn: fetchData,
+  });
+
+  const projectsData = data || [];
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6;
+
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-  const currentProjects = projects.slice(
+  const currentProjects = projectsData.slice(
     indexOfFirstProject,
     indexOfLastProject
   );
 
-  // Pagination logic
-  const totalPages = Math.ceil(projects.length / projectsPerPage);
+  const totalPages = Math.ceil(projectsData.length / projectsPerPage);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -49,7 +81,6 @@ const ProjectView = () => {
           >
             <ProjectCard
               href={project.href}
-              key={project.title}
               title={project.title}
               description={project.description}
               dates={project.dates}
