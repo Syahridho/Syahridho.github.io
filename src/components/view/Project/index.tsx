@@ -10,6 +10,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const BlurIn = dynamic(() => import("@/components/ui/blur-in"), { ssr: false });
 const BlurFade = dynamic(() => import("@/components/ui/blur-fade"), {
@@ -43,7 +44,7 @@ export async function getServerSideProps() {
 }
 
 const ProjectView = () => {
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["projects"],
     queryFn: fetchData,
   });
@@ -73,22 +74,33 @@ const ProjectView = () => {
       />
       <h1 className="mb-8">The project I&apos;ve created</h1>
       <div className="p-4 grid grid-cols-1 gap-8 sm:grid-cols-2 max-w-[800px] mx-auto">
-        {currentProjects.map((project: any, index: number) => (
-          <BlurFade
-            key={project.title}
-            delay={BLUR_FADE_DELAY * 12 + index * 0.05}
-            inView
-          >
-            <ProjectCard
-              href={project.href}
-              title={project.title}
-              description={project.description}
-              dates={project.dates}
-              tags={project.technologies}
-              image={project.image}
-            />
-          </BlurFade>
-        ))}
+        {isLoading ? (
+          <>
+            <Skeleton className="w-96 md:w-[350px] h-56" />
+            <Skeleton className="w-96 md:w-[350px] h-56" />
+            <Skeleton className="w-96 md:w-[350px] h-56" />
+            <Skeleton className="w-96 md:w-[350px] h-56" />
+            <Skeleton className="w-96 md:w-[350px] h-56" />
+            <Skeleton className="w-96 md:w-[350px] h-56" />
+          </>
+        ) : (
+          currentProjects.map((project: any, index: number) => (
+            <BlurFade
+              key={project.title}
+              delay={BLUR_FADE_DELAY * 12 + index * 0.05}
+              inView
+            >
+              <ProjectCard
+                id={project.id}
+                title={project.title}
+                description={project.description}
+                dates={project.dates}
+                tags={project.technologies}
+                image={project.image}
+              />
+            </BlurFade>
+          ))
+        )}
       </div>
       <div>
         <Pagination>

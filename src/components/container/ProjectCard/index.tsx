@@ -6,8 +6,8 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 
 interface Props {
+  id: string;
   title: string;
-  href?: string;
   description: string;
   dates: string;
   tags: readonly string[];
@@ -22,8 +22,8 @@ interface Props {
 }
 
 const ProjectCard = ({
+  id,
   title,
-  href,
   description,
   dates,
   tags,
@@ -32,7 +32,7 @@ const ProjectCard = ({
   className,
 }: Props) => {
   return (
-    <Link href={href || "#"}>
+    <Link href={`/project/${id}`}>
       <Card
         className={
           "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
