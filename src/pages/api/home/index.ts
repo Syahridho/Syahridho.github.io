@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { retriveData } from "@/lib/firebase/service";
+import { retrieveData } from "@/lib/firebase/service";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -7,8 +7,8 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const response = await retriveData("home");
-    const career = await retriveData("career");
+    const response = await retrieveData("home");
+    const career = await retrieveData("career");
     if (response) {
       res.status(200).json({
         statusCode: 200,

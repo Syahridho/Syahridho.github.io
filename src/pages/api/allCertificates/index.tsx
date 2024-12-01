@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { retriveData } from "@/lib/firebase/service";
+import { retrieveData } from "@/lib/firebase/service";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -7,11 +7,11 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const frondEnd = await retriveData("certificateFrontend");
-    const backEnd = await retriveData("certificateBackend");
-    const devOps = await retriveData("certificateDevops");
-    const mechine = await retriveData("certificateMechine");
-    const other = await retriveData("certificateOther");
+    const frondEnd = await retrieveData("certificateFrontend");
+    const backEnd = await retrieveData("certificateBackend");
+    const devOps = await retrieveData("certificateDevops");
+    const mechine = await retrieveData("certificateMechine");
+    const other = await retrieveData("certificateOther");
     if (frondEnd && backEnd && devOps && mechine && other) {
       res.status(200).json({
         statusCode: 200,
