@@ -9,7 +9,6 @@ export default async function handler(
   if (req.method === "GET") {
     const { id }: any = req.query;
 
-    console.log(id);
     if (id && id[0]) {
       const response = await retrieveDataById("projects", id[0]);
       if (response) {

@@ -1,4 +1,5 @@
 import { home } from "@/utils/resume";
+import ContainerLayout from "@/components/layout/ContainerLayout";
 import { cn } from "@/lib/utils";
 import CareerCard from "@/components/container/CareerCard";
 import HeaderHome from "@/components/container/HeaderHome";
@@ -39,7 +40,7 @@ const HomeView = () => {
   });
 
   return (
-    <>
+    <ContainerLayout>
       <div className="flex flex-col md:justify-between md:items-center md:flex-row">
         <BlurIn
           word={`Hi, I'm ${home.name}`}
@@ -125,7 +126,7 @@ const HomeView = () => {
           "[mask-image:radial-gradient(300px_circle_at_right,white,transparent)]"
         )}
       />
-    </>
+      </ContainerLayout>
   );
 };
 

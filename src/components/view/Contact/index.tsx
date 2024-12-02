@@ -6,6 +6,7 @@ import GridPattern from "@/components/ui/grid-pattern";
 import BlurIn from "@/components/ui/blur-in";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import ContainerLayout from "@/components/layout/ContainerLayout";
 
 const ContactView = () => {
   const methods = useReactHookForm();
@@ -37,6 +38,7 @@ const ContactView = () => {
   };
 
   return (
+     <ContainerLayout>
     <div className="max-w-[600px] mx-auto">
       <BlurIn
         word="Contact Me"
@@ -60,6 +62,7 @@ const ContactView = () => {
         )}
       />
     </div>
+    </ContainerLayout>
   );
 };
 

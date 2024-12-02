@@ -28,7 +28,7 @@ const CopyCode = ({ title, code }: PropTypes) => {
     <div>
       <h1 className="text-lg font-medium mb-3 text-slate-800">{title}</h1>
       <pre>
-        <div className="px-6 py-3 bg-zinc-900 rounded-lg flex justify-between items-center shadow-xl">
+        <div className="px-6 py-3 bg-zinc-800 rounded-lg flex justify-between items-center shadow-xl">
           <div className="text-gray-200 text-sm">{code}</div>
           {isCopy ? (
             <div className="relative">
