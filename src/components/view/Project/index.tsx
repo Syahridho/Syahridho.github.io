@@ -60,6 +60,8 @@ const ProjectView = () => {
     indexOfLastProject
   );
 
+  console.log(currentProjects);
+
   const totalPages = Math.ceil(projectsData.length / projectsPerPage);
 
   const handlePageChange = (pageNumber: number) => {
@@ -94,9 +96,8 @@ const ProjectView = () => {
                 id={project.id}
                 title={project.title}
                 description={project.description}
-                dates={project.dates}
-                tags={project.technologies}
                 image={project.image}
+                tech={project.tech}
               />
             </BlurFade>
           ))

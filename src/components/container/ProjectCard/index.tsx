@@ -1,17 +1,16 @@
-import { Badge } from "@/components/ui/badge";
 import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import * as SiIcons from "react-icons/si";
 
 interface Props {
   id: string;
   title: string;
   description: string;
-  dates: string;
-  tags: readonly string[];
-  link?: string;
+  tech: string[];
+  link?: string[];
   image?: string;
   links?: readonly {
     icon: React.ReactNode;
@@ -25,9 +24,7 @@ const ProjectCard = ({
   id,
   title,
   description,
-  dates,
-  tags,
-  link,
+  tech,
   image,
   className,
 }: Props) => {
@@ -35,7 +32,7 @@ const ProjectCard = ({
     <Link href={`/project/${id}`}>
       <Card
         className={
-          "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
+          "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full rounded"
         }
       >
         <div className={cn("block cursor-pointer", className)}>
@@ -45,39 +42,25 @@ const ProjectCard = ({
               alt={title}
               width={500}
               height={500}
-              className="h-52 w-full overflow-hidden object-cover object-top"
+              className="h-52 w-full overflow-hidden object-cover object-top shadow"
             />
           )}
         </div>
-        <CardHeader className="px-2">
+        <CardHeader className="px-3.5">
           <div className="space-y-0.5">
             <CardTitle className="mt-1 text-base">{title}</CardTitle>
-            <time className="font-sans text-xs">{dates}</time>
-            <div className="hidden font-sans text-xs underline print:visible">
-              {link
-                ?.replace("https://", "")
-                .replace("www.", "")
-                .replace("/", "")}
-            </div>
+
             <Markdown className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
               {description}
             </Markdown>
           </div>
         </CardHeader>
-        <CardFooter className="mt-auto flex flex-col px-2">
-          {tags && tags.length > 0 && (
-            <div className="mt-2 flex flex-wrap gap-1">
-              {tags?.map((tag: any) => (
-                <Badge
-                  className="px-1 py-0 text-[10px]"
-                  variant="secondary"
-                  key={tag}
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          )}
+        <CardFooter className="mt-auto flex !justify-start gap-1 pl-4">
+          {tech &&
+            tech.map((tech: any, index: number) => {
+              const Icons = (SiIcons as any)[tech.icons];
+              return <Icons key={index} color={tech.color} />;
+            })}
         </CardFooter>
       </Card>
     </Link>
